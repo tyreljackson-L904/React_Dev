@@ -64,5 +64,12 @@
 
 // const newArray = myArray.map(num => num * 4)
 
-// console.log(newArray)
+// console.log(newArray) // returns input 
 
+var newCar = {
+    make: "Honda",
+    model: "Civic",
+    color: "brown",
+    year: 1997
+}
+console.log(newCar.color)
