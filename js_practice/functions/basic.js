@@ -66,10 +66,31 @@
 
 // console.log(newArray) // returns input 
 
-var newCar = {
-    make: "Honda",
-    model: "Civic",
-    color: "brown",
-    year: 1997
-}
-console.log(newCar.color)
+// var newCar = {
+//     make: "Honda",
+//     model: "Civic",
+//     color: "brown",
+//     year: 1997
+// }
+// console.log(newCar.color)
+
+// 2D dimensional arrays
+
+// const myNumbers = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ]
+
+// const subsetNumbers = myNumbers[1][1]
+// console.log(subsetNumbers)
+
+// Multi Dimensional Arrays
+
+// myNumbers = [[1],[1,2,3],[4,[5],6],7]
+
+// const numberSubset = myNumbers[2][1][0] // 5 - you are going 3 levels deep
+// console.log(numberSubset)
+
+// loop over an array for loop
+
