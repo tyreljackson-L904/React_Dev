@@ -1,21 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
 
-// create components with capital letter
-const Greeting = (props) => { // for function components use 'props'!!!!
-  return (
-    <div>
-      <p>{props.greet} {props.name}</p>
-    </div>
-  );
+//create components with capital letter
+// const Greeting = (props) => { // for function components use 'props'!!!!
+//   return (
+//     <div>
+//       <p>{props.greet} {props.name}</p>
+//     </div>
+//   );
+// }
+
+// const GreetAll = (props) => {
+//   return (
+//     <div>
+//       {props.names.map(item => <Greeting greet={props.greeting} name={item} /> )}
+//     </div>
+//   )
+// }
+
+// const WorkWeek = (props) => {
+//   return (
+//     <div>
+//       {props.greet} {props.names} 
+//     </div>
+//   )
+// }
+
+const UserGreeting = (props) => {
+  return <h1>Welcome Back!</h1>
 }
 
-const GreetAll = (props) => {
-  return (
-    <div>
-      {props.names.map(item => <Greeting greet={props.greeting} name={item} /> )}
-    </div>
-  )
+const GuestGreeting = (props) => {
+  return <h1>Please sign up.</h1>
+}
+
+const Greeting = (props) => {
+  const isLoggedIn = props.isLoggedIn;
+  return isLoggedIn ? <UserGreeting /> : <GuestGreeting />
 }
 
 function App() {
@@ -34,10 +55,10 @@ function App() {
         >
           Learn React
         </a>
-        <Greeting greet="Hello, " name="Ricky"/>
-        <Greeting greet="Hello, " name="Bobby"/>
-        <Greeting greet="Hello, " name="Talladega"/>
+        <Greeting isLoggedIn={true}/>
+        {/* <Greeting greet="Hello, " name="Talladega"/>
         <GreetAll greeting="Goodbye, " names={["names", "othername", "anothername"]} />
+        <WorkWeek greet="Hello" names="Bobby" /> */}
       </header>
     </div>
   );
