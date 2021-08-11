@@ -1,6 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 
+// create components with capital letter
+const Greeting = (props) => { // for function components use 'props'!!!!
+  return (
+    <div>
+      <p>{props.greet} {props.name}</p>
+    </div>
+  );
+}
+
+const GreetAll = (props) => {
+  return (
+    <div>
+      {props.names.map(item => <Greeting greet={props.greeting} name={item} /> )}
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +34,10 @@ function App() {
         >
           Learn React
         </a>
+        <Greeting greet="Hello, " name="Ricky"/>
+        <Greeting greet="Hello, " name="Bobby"/>
+        <Greeting greet="Hello, " name="Talladega"/>
+        <GreetAll greeting="Goodbye, " names={["names", "othername", "anothername"]} />
       </header>
     </div>
   );
