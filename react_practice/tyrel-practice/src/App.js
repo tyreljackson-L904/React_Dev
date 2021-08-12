@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Greeting isLoggedIn={false} />
+        <Greeting isLoggedIn={true} />
       </header>
     </div>
   );
