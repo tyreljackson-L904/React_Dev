@@ -1,25 +1,25 @@
 import React from 'react';
 
-const UserGreeting = (props) => {
+const UserGreeting = ( props ) => {
     return (
         <div>
-            <h1>{props.user}</h1>
+            <h1>{ props.user }</h1>
         </div>
     );
 }
 
-const GuestGreeting = (props) => {
+const GuestGreeting = ( props ) => {
     return (
         <div>
-            <h1>{props.guest}</h1>
+            <h1>{ props.guest }</h1>
         </div>
     );
 }
 
-const Greeting = (props) => {
+const Greeting = ( props ) => {
     return (
         <div>
-            {props.isLoggedIn ? <UserGreeting user="Welcome Back!" /> : <GuestGreeting guest="Please sign in." />}
+            { props.isLoggedIn ? <UserGreeting user="Welcome Back!" /> : <GuestGreeting guest="Please sign in." />}
         </div>
     )
 }

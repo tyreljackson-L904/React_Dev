@@ -1,8 +1,8 @@
-import Header from './Greeting'
+// import Header from './Greeting'
 
 const Button = (props) => {
     return (
-        <button> {props.text} {props.title.map(person => <Header title={ person } />)}</button>
+        <button> {props.text} {props.title}</button>
     )
 }
 
