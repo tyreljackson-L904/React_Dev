@@ -2,6 +2,7 @@
 // If the integer is represented with the letter n, a factorial is the product of all positive integers less tha or equal to n.
 // Factorials are often represented with the shorthand notation n!
 
+// SOLUTION #1: RECURSION
 function factorialize(num) {
     // you cannot factorialize a negative integer, returns false
     if (num < 0) {
