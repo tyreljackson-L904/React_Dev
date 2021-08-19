@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-// import Greeting from './components/is-logged-in';
 import Greeting from './components/Greeting';
-import Button from './components/Button';
+import Counter from './components/Counter'
 
 
 const App = () => {
@@ -11,7 +10,7 @@ const App = () => {
       <header className="App-header">
         {/* <Greeting isLoggedIn={true} /> */}
         <Greeting  name="Tyrel"/>
-        <Button title="Change"/>
+        <Counter count={0}/>
       </header>
     </div>
   );
