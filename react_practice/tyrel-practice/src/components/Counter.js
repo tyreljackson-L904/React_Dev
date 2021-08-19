@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 // create a component that increments and decrements a number
-
 const Counter = () => {
 
     const [count, setValue] = useState(0);
@@ -15,12 +14,20 @@ const Counter = () => {
     }
 
     return (
-        <div>
-            <button onClick={decrement}> - </button>
+        <div style={counterDivStyle}>
+            <button onClick={decrement}>-</button>
             <p>{count}</p>
-            <button onClick={increment}> + </button>
+            <button onClick={increment}>+</button>
         </div>
     ) 
 } 
+
+const counterDivStyle = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: 30,
+    height: 30,
+}
 
 export default Counter;
