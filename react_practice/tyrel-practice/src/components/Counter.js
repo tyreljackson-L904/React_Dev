@@ -14,7 +14,7 @@ const Counter = () => {
     }
 
     return (
-        <div style={counterDivStyle}>
+        <div>
             <button onClick={decrement}>-</button>
             <p>{count}</p>
             <button onClick={increment}>+</button>
@@ -22,12 +22,12 @@ const Counter = () => {
     ) 
 } 
 
-const counterDivStyle = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: 30,
-    height: 30,
-}
+// const counterDivStyle = {
+//     display: 'inline-flex',
+//     alignItems: 'center',
+//     justifyContent: 'space-between',
+//     width: 50,
+//     height: 50,
+// }
 
 export default Counter;

@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Greeting = props => {
-    return (
-        <h1>Welcome to React Masterclass, { props.name }</h1>
-    )
+
+  const names = ['Tyrel', 'Jerel', 'Liz', 'Kristen']
+
+  const [name, setName] = useState(names[0])
+
+  const randomName = (names) => {
+      const randIndx = Math.floor(Math.random() * (names.length))
+      return names[randIndx] + '!'
+  } 
+
+  const changeName = () => {
+      setName(randomName(names))
+  }
+
+  return (
+      <div>
+          <h1>Welcome to React Masterclass, { name }</h1>
+          <button onClick={changeName}> Change Name </button>
+      </div>
+  )
 }
 
 export default Greeting
