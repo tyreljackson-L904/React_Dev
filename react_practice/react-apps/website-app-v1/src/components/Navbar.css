@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgb(0,191,255) 0%, rgb(30,144,255) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-right {
+  margin-left: 70%;
+}
+
+.navbar-title {
+  color: white;
+  position: sticky;
+}
+
+.nav-menu li{
+  display: flex;
+  float: left;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
