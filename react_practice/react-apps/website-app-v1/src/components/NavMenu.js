@@ -22,6 +22,9 @@ function NavMenu() {
     </li>
   });
 
+  const showMenu =  <FiMenu className = 'hamburger-menu-icon' /> 
+  const hideMenu = <IoMdClose className='close-menu-icon' /> 
+
   return (
     <div>
       <ul className="nav-menu">
@@ -34,11 +37,7 @@ function NavMenu() {
           </Link>
         </li>
         <li className="menu-btn" onClick={toggleMenu}>
-          {menuIcon ? 
-            <IoMdClose className='close-menu-icon' />
-            :
-            <FiMenu className='hamburger-menu-icon' />
-          }
+          {menuIcon ? hideMenu : showMenu}
         </li>
       </ul>
     </div>
