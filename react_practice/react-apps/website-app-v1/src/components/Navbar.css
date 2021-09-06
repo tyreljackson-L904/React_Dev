@@ -31,14 +31,16 @@
   float: left;
   height: 60px;
   align-items: center;
+  
 }
 
 .nav-link {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 16px;
   color: #edf0f1;
   text-decoration: none;
-  padding: 0 50px;
+  margin: 0 50px;
+  padding: 0 10px 3px 10px;
 }
 
 .signup-btn {
@@ -51,20 +53,45 @@
   border: none;
 }
 .signup-btn:hover {
-  background-color: #1e90ff;
-  padding: 8px 13px;
+  /* background-color: #1e90ff; */
   font-weight: bold;
-  font-size: 18px;
+
 }
 
+.nav-link:hover {
+  border-bottom: 2px solid #edf0f1;
+  border-radius: 10px;
+}
+
+.hamburger-menu-icon {
+  display: none;
+}
 
 /*
   MEDIA QUERIES
 */
 
+@media only screen and (max-width: 854px) {
+  .nav-link {
+    margin: 0 20px;
+  }
+}
+
 @media only screen and (max-width: 792px) {
   .nav-link, .signup-btn {
     display: none;
+  }
+  .hamburger-menu-icon {
+    display: flex;
+    cursor: pointer;
+    font-size: 30px; 
+    color: white;
+  }
+  .close-menu-icon {
+    display: flex;
+    cursor: pointer;
+    font-size: 30px; 
+    color: white;
   }
   .menu-links {
     font-weight: 500;
@@ -72,6 +99,7 @@
     color: #edf0f1;
     text-decoration: none;
     padding: 0 50px;
+    margin: 
   }
 }
 
