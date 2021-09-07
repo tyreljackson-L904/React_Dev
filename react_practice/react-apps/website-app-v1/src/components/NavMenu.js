@@ -32,11 +32,11 @@ function NavMenu() {
       <ul className="nav-menu">
         {menuLinks}
         <li className="nav-signup">
-          <Link to='/sign-up'>
-            <button className="signup-btn">
+          <button className="signup-btn">
+            <Link to='/signup' className="signup-btn">
               Sign Up
-            </button> 
-          </Link>
+            </Link>
+          </button>
         </li>
         <li onClick={toggleMenu}>
           {!menuIcon ? showMenu : hideMenu}
