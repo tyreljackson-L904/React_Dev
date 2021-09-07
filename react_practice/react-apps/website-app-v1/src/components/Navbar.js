@@ -1,29 +1,21 @@
 import React from 'react';
 import './Navbar.css'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 import NavMenu from './NavMenu';
 
 function Navbar() {
   return (
-    <Router>
-      <Switch>
-        <Route>
-          
-          <nav className='navbar'>
-            <div className="nav-left">
-              <h2 className='navbar-title'>
-                WeeCode
-              </h2>
-            </div>
+    <nav className='navbar'>
+      <div className="nav-left navbar-title">
+        <Link to='/'>
+          Wee{'{Code}'}
+        </Link>
+      </div>
 
-            <div className="nav-right"> 
-              <NavMenu />
-            </div>
-          </nav>
-
-        </Route>
-      </Switch>
-    </Router>
+      <div className="nav-right"> 
+        <NavMenu />
+      </div>
+    </nav>
   )
 }
 

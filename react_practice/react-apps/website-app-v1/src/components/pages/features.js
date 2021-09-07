@@ -1,13 +1,13 @@
 import React from 'react'
 
-function features() {
+function Features() {
     return (
         <div>
-            <h1 className="features-home">
+            <h1 className="features-page">
                 Features
             </h1>
         </div>
     )
 }
 
-export default features;
+export default Features;

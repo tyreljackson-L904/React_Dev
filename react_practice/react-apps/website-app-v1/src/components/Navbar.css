@@ -16,6 +16,9 @@
 .navbar-title {
   color: white;
   position: sticky;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 28px;
 }
 
 .nav-left {
@@ -31,7 +34,6 @@
   float: left;
   height: 60px;
   align-items: center;
-  
 }
 
 .nav-link {
@@ -71,7 +73,7 @@
   MEDIA QUERIES
 */
 
-@media only screen and (max-width: 854px) {
+@media only screen and (max-width: 894px) {
   .nav-link {
     margin: 0 20px;
   }
@@ -94,12 +96,16 @@
     color: white;
   }
   .menu-links {
+    display: flex; 
+    position: relative;
     font-weight: 500;
     font-size: 16px;
-    color: #edf0f1;
     text-decoration: none;
     padding: 0 50px;
+    top: 50px;
+    right: 50px;
   }
+
 }
 
 

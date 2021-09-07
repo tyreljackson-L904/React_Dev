@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Route, Link } from 'react-router-dom';
-import { MenuItems } from './NavbarElements';
+import { BrowserRouter as Link } from 'react-router-dom';
+import { menuLinks, showMenu, hideMenu } from './MenuElements';
 import { useState } from 'react';
-import { FiMenu } from 'react-icons/fi';
-import { IoMdClose } from 'react-icons/io';
+
 
 function NavMenu() {
   const [menuIcon, setMenuIcon] = useState(false);
@@ -12,18 +11,21 @@ function NavMenu() {
       setMenuIcon(!menuIcon)
   }
 
-  const menuLinks = MenuItems.map((item, index) => {
-    return <li key={index}>
-      <Route to={item.url}>
-        <Link exact to={item.url} className={item.cName}>
-          {item.title}
-        </Link>
-      </Route>
-    </li>
-  });
-
-  const showMenu =  <FiMenu className = 'hamburger-menu-icon' /> 
-  const hideMenu = <IoMdClose className='close-menu-icon' /> 
+  if (menuIcon) {
+    return <li style={{
+      display: 'flex',
+      flexDirection: 'column',
+      position: 'absolute',
+      fontSize: '20px',
+      top: '80px',
+      right: '100px',
+      color: 'black',
+      textDecoration: 'none',
+      backgroundColor: 'gray' 
+   }}>
+      {hideMenu}{menuLinks}
+      </li>
+  } 
 
   return (
     <div>
@@ -36,8 +38,8 @@ function NavMenu() {
             </button> 
           </Link>
         </li>
-        <li className="menu-btn" onClick={toggleMenu}>
-          {menuIcon ? hideMenu : showMenu}
+        <li onClick={toggleMenu}>
+          {!menuIcon ? showMenu : hideMenu}
         </li>
       </ul>
     </div>
