@@ -1,36 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Link } from 'react-router-dom';
-import { menuLinks, showMenu, hideMenu } from './MenuElements';
+import { MenuLinks, showMenu, hideMenu } from './MenuElements';
 import { useState } from 'react';
 
 
 function NavMenu() {
-  const [menuIcon, setMenuIcon] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-      setMenuIcon(!menuIcon)
+      setIsOpen(!isOpen)
   }
-
-  if (menuIcon) {
-    return <li style={{
-      display: 'flex',
-      flexDirection: 'column',
-      position: 'absolute',
-      fontSize: '20px',
-      top: '80px',
-      right: '100px',
-      color: 'black',
-      textDecoration: 'none',
-      backgroundColor: 'gray' 
-   }}>
-      {hideMenu}{menuLinks}
-      </li>
-  } 
 
   return (
     <div>
       <ul className="nav-menu">
-        {menuLinks}
+        <MenuLinks />
         <li className="nav-signup">
           <button className="signup-btn">
             <Link to='/signup' className="signup-btn">
@@ -38,8 +22,11 @@ function NavMenu() {
             </Link>
           </button>
         </li>
-        <li onClick={toggleMenu}>
-          {!menuIcon ? showMenu : hideMenu}
+        <li onClick={toggleMenu} className='mobile-menu-container'>
+          {!isOpen ? showMenu : hideMenu}
+          {isOpen && <div className='mobile-menu'>
+            <MenuLinks isMobile />
+          </div>}
         </li>
       </ul>
     </div>

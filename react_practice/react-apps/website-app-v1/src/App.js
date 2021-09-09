@@ -10,6 +10,7 @@ function App() {
     <React.Fragment>
       <Router>
         <Navbar />
+        <Home /> 
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/features' component={Features} exact />
