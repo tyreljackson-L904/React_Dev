@@ -1,13 +1,14 @@
 import React from 'react'
+import '../css/dropdown.css'
 
 const DropdownList = (props) => {
 
-    let listItems = ['option 1', 'option 2', 'option 3', 'option 4'];
+    let listItems = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 
     return listItems.map((props) => {
-        return <li className="list-item">
+        return <li className="dropdown-item">
             {props}
-        </li>
+        </li>   
     });
 }
 
