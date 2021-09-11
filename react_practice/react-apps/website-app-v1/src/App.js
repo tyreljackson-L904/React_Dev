@@ -9,12 +9,11 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <Navbar />
-        <Home /> 
+        <Navbar /> 
         <Switch>
-          <Route path='/' component={Home} exact />
-          <Route path='/features' component={Features} exact />
-          <Route path='/contact' component={Contact} exact />
+          <Route path='/home' component={Home} exact />
+          <Route path='/features' component={Features} />
+          <Route path='/contact' component={Contact} />
         </Switch>
       </Router>
     </React.Fragment>

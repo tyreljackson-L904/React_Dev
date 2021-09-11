@@ -1,0 +1,37 @@
+/******** PRIMARY BUTTON ********/
+
+.primary-btn-container {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.primary-btn-header {
+  width: 100%;
+  background-color: rgb(200, 199, 199);
+  padding: 10px 50px;
+  border-radius: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+/******** SECONDARY BUTTON ********/
+
+.secondary-btn-container {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px; /*remove*/
+}
+
+.secondary-btn-header {
+  width: 100%;
+  padding: 10px 50px;
+  border: 2px solid lightgray;
+  border-radius: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+

@@ -2,50 +2,45 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /************  NAVBAR  ************/
 
 .navbar {
-  background: linear-gradient(90deg, rgb(0,191,255) 0%, #1e90ff 100%);
+  /* background: linear-gradient(90deg, rgb(0, 191, 255) 0%, #1e90ff 100%); */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 80px;
+  padding: 0 5%;
 }
 
 .navbar-title {
-  color: white;
+  color: #1e90ff;
   position: sticky;
   text-decoration: none;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 22px;
 }
 
-.nav-left {
-  margin-left: 50px;
-}
-
-.nav-right {
-  margin-right: 50px;
-}
-
-.nav-menu li{
+.nav-menu li {
   display: flex;
   float: left;
   height: 60px;
   align-items: center;
 }
 
-.nav-link {
-  font-weight: bold;
+.nav-link:not(.nav-mobile) {
+  font-weight: medium;
   font-size: 16px;
-  color: #edf0f1;
+  color: #333;
   text-decoration: none;
   margin: 0 50px;
   padding: 0 10px 3px 10px;
 }
+
+/********* NAV MOBILE ********/
 
 .nav-mobile {
   font-size: 24px;
@@ -61,12 +56,17 @@
   position: absolute;
   top: 100%;
   right: 0;
-  color: black;
-  text-decoration: none;
-  background-color: gray;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  background-color: #1e90ff;
 }
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/********** NAV MOBILE END **********/
 
 .signup-btn {
   color: #edf0f1;
@@ -77,8 +77,8 @@
   -webkit-border-radius: 11px;
   border-radius: 11px;
   background: #1e90ff;
-  -webkit-box-shadow: 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff;
-  box-shadow: 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff;
+  /* -webkit-box-shadow: 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff;
+  box-shadow: 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff; */
 }
 
 .signup-btn:active {
@@ -90,8 +90,8 @@
   -webkit-border-radius: 11px;
   border-radius: 11px;
   background: #1e90ff;
-  -webkit-box-shadow: inset 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff;
-  box-shadow: inset 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff;
+  /* -webkit-box-shadow: inset 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff;
+  box-shadow: inset 5px 5px 10px #1a7cdb, -5px -5px 10px #22a4ff; */
 }
 
 .nav-link:hover {
@@ -107,30 +107,31 @@
   MEDIA QUERIES
 */
 
-@media only screen and (max-width: 894px) {
+@media only screen and (max-width: 844px) {
   .nav-link {
-    margin: 0 20px;
+    margin: 0 10px;
   }
 }
 
 @media only screen and (max-width: 792px) {
-  .nav-link:not(.nav-mobile), .signup-btn {
+  .nav-link:not(.nav-mobile),
+  .signup-btn {
     display: none;
   }
   .hamburger-menu-icon {
     display: flex;
     cursor: pointer;
-    font-size: 30px; 
-    color: white;
+    font-size: 30px;
+    color: #333;
   }
   .close-menu-icon {
     display: flex;
     cursor: pointer;
-    font-size: 30px; 
-    color: white;
+    font-size: 30px;
+    color: #333;
   }
   .menu-links {
-    display: flex; 
+    display: flex;
     position: relative;
     font-weight: 500;
     font-size: 16px;
@@ -139,7 +140,4 @@
     top: 50px;
     right: 50px;
   }
-
 }
-
-
