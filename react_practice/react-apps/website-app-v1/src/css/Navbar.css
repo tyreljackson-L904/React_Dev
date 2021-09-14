@@ -8,12 +8,19 @@
 /************  NAVBAR  ************/
 
 .navbar {
-  /* background: linear-gradient(90deg, rgb(0, 191, 255) 0%, #1e90ff 100%); */
-  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 60px;
   padding: 0 5%;
+}
+
+.navbar.active {
+  background: linear-gradient(90deg, rgb(0, 191, 255) 0%, #1e90ff 100%);
+  color: #fff;
 }
 
 .navbar-title {
@@ -24,11 +31,17 @@
   font-size: 22px;
 }
 
-.nav-menu li {
+.nav-left.navbar-title.active {
+  color: #fff;
+}
+
+.nav-center {
   display: flex;
-  float: left;
-  height: 60px;
-  align-items: center;
+  list-style: none;
+}
+
+.nav-center.active {
+  color: #fff;
 }
 
 .nav-link:not(.nav-mobile) {
@@ -36,8 +49,12 @@
   font-size: 16px;
   color: #333;
   text-decoration: none;
-  margin: 0 50px;
+  margin: 0 10px;
   padding: 0 10px 3px 10px;
+}
+
+.nav-link.active {
+  color: #fff;
 }
 
 /********* NAV MOBILE ********/
@@ -95,6 +112,7 @@
 }
 
 .nav-link:hover {
+  color: #1e90ff;
   border-bottom: 2px solid #edf0f1;
   border-radius: 10px;
 }

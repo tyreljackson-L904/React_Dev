@@ -2,17 +2,23 @@
 
 .primary-btn-container {
   display: inline-block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .primary-btn-header {
   width: 100%;
-  background-color: rgb(200, 199, 199);
-  padding: 10px 50px;
+  background-color: #1e90ff;
+  padding: 15px 70px;
   border-radius: 1px;
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
+  color: #fff;
+  opacity: 0.95;
+}
+
+.primary-btn-header:hover {
+  background-color: #fff;
   color: #333;
 }
 
@@ -20,7 +26,7 @@
 
 .secondary-btn-container {
   display: inline-block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-left: 20px; /*remove*/
 }
 
@@ -34,4 +40,3 @@
   font-weight: bold;
   color: #333;
 }
-

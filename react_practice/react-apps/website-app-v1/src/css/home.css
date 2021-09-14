@@ -1,26 +1,215 @@
+body {
+  background-color: #f2f9fd;
+  margin-top: 5rem;
+}
+
 .home-container {
-  /* display: inline-flex; */
+  display: flex;
   width: 100%;
   height: 100vh;
-  padding: 0 5%;
+  padding: 13px 2%;
 }
+
+/******** HOME LEFT CONTENT ********/
 
 .home-left-content {
-  background-color: aqua;
-  width: 25%;
-  height: 80vh;
-  text-align: center;
+  flex-basis: 20%;
+  flex-direction: column;
 }
+
+.left-container-main {
+  margin-top: 25px;
+  margin-right: 15px;
+  background-color: #fff;
+  /* border: 2px solid #1e90ff;
+  border-radius: 5px; */
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.08);
+}
+
+.search-container {
+  margin: 0;
+  padding: 0;
+}
+
+.search {
+  max-width: 200px;
+  margin: 10px 0 10px 14px;
+  padding: 10px;
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #f2f9fd;
+}
+
+.search-btn {
+  background-color: #1e90ff;
+  color: rgb(243, 243, 243);
+  font-weight: 500;
+  padding: 10px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search-btn:hover {
+  background-color: rgb(243, 243, 243);
+  color: #333;
+  cursor: pointer;
+}
+
+.main-content ul {
+  list-style: none;
+  text-align: start;
+  padding: 10px;
+  padding-bottom: 20px;
+  color: #333;
+  font-weight: 500;
+}
+
+.main-menu-list li {
+  display: flex;
+  padding: 5px;
+  font-size: small;
+}
+
+.main-menu-list li:hover {
+  background-color: rgb(54, 54, 54);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main-menu-list li:visited {
+  text-decoration: underline;
+}
+
+.left-sidebar-icon {
+  margin-right: 10px;
+}
+
+.list-item {
+  display: inline;
+}
+
+/**** LEFT TAG SCROLLVIEW ****/
+
+.left-container-scrollview {
+  margin-right: 15px;
+  background-color: #fff;
+  /* border: 2px solid #1e90ff;
+  border-radius: 5px; */
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.08);
+}
+
+.left-container-scrollview h4 {
+  color: rgb(54, 54, 54);
+  padding: 12px;
+}
+
+.scrollview-list-items {
+  list-style: none;
+  margin: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.scrollview-list-items::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollview-list-items li {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 25px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.scrollview-list-items li:hover {
+  background-color: rgb(54, 54, 54);
+  color: #fff;
+}
+
+/********* HOME CENTER CONTENT ********/
 
 .home-center-content {
-  background-color: blueviolet;
-  width: 50%;
-  text-align: center;
+  flex-basis: 65%;
+}
+.image-container {
+  max-width: 100%;
+  min-height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/src/images/home-center-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  border-radius: 5px;
 }
 
-.home-right-content {
-  background-color: aqua;
-  width: 25%;
-  height: 80vh;
-  text-align: center;
+.header-container {
+  margin: auto;
+  max-width: 85%;
 }
+
+.header {
+  padding-top: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  color: #fff;
+}
+
+.sub-heading {
+  margin: 20px 50px 0 50px;
+  padding: 40px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  line-height: 1.5em;
+}
+
+.home-center-content h1 span::before {
+  content: "\a";
+  white-space: pre;
+}
+
+.home-center-content h1 span::after {
+  content: "\a";
+  white-space: pre;
+}
+
+.primary-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+/******** HOME RIGHT CONTENT ********/
+
+.home-right-content {
+  /* background-color: aqua; */
+  flex-basis: 20%;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 15px;
+  background-color: #fff;
+  /* border: 2px solid #1e90ff;
+  border-radius: 5px; */
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.08);
+  max-height: 200px;
+}
+
+.right-profile-name-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: end;
+  padding: 10px 20px 0 0;
+}
+
+.right-profile-name-image h4 {
+  font-weight: 500;
+}
+
+/******** MEDIA QUERY ********/
