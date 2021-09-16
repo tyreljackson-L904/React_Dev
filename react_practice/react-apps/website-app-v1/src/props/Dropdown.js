@@ -23,7 +23,11 @@ function Dropdown(props) {
       </div>
       {isOpen && (
         <div className="dropdown-list">
-          <DropdownList onSelect={selectItem} />
+          <option />
+          <DropdownList
+            onSelect={selectItem}
+            data={["Item 1", "Item 2", "Item 3", "Item 4"]}
+          />
         </div>
       )}
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "../css/dropdown.css";
 
 const DropdownList = (props) => {
-  let listItems = [];
+  let listItems = props.data;
 
   return listItems.map((item) => {
     const handleClick = () => {
@@ -11,7 +11,7 @@ const DropdownList = (props) => {
 
     return (
       <li className="dropdown-item" onClick={handleClick}>
-        {props.item}
+        {item}
       </li>
     );
   });

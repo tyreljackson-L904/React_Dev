@@ -1,4 +1,3 @@
-import React from "react";
 import "../../css/home.css";
 import CenterContainer from "../../props/home/CenterContainer";
 import LeftContentMenu from "../../props/home/LeftContainer";
@@ -19,7 +18,7 @@ function Home() {
         <CenterContainer />
       </div>
       <div className="home-right-content">
-        <RightUserDataContainer />
+        {/* <RightUserDataContainer /> */}
       </div>
     </div>
   );

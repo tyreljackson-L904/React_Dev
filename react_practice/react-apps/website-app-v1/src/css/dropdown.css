@@ -1,5 +1,5 @@
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .dropdown {
@@ -8,6 +8,7 @@
 }
 
 .dropdown-header {
+  min-width: 150px;
   display: inline-flex;
   padding: 10px 12px;
   font-size: 16px;
@@ -20,7 +21,7 @@
   cursor: pointer;
 }
 
-.dropdown-arrow span{
+.dropdown-arrow span {
   font-size: 20px;
   margin-left: 20px;
   border-left: 2px solid lightgray;
@@ -29,7 +30,7 @@
 
 .dropdown-list {
   box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
-  margin-top: 0.50rem;
+  margin-top: 0.5rem;
   width: 12rem;
   border-radius: 10px;
 }
@@ -51,5 +52,3 @@
   font-weight: bold;
   border-radius: 10px;
 }
-
-
