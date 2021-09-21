@@ -18,6 +18,10 @@
   padding: 0 5%;
 }
 
+.nav-menu {
+  list-style: none;
+}
+
 .navbar.active {
   background: linear-gradient(90deg, rgb(0, 191, 255) 0%, #1e90ff 100%);
   color: #fff;
@@ -51,6 +55,7 @@
   text-decoration: none;
   margin: 0 10px;
   padding: 0 10px 3px 10px;
+  list-style: none;
 }
 
 .nav-link:not(.nav-mobile).active {
