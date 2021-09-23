@@ -1,13 +1,13 @@
 .primary-btn-title {
   padding: 10px 18px;
-  background-color: #0caadc;
+  background-color: #1e90ff;
   color: #fff;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   max-width: 48%;
-  border-radius: 2px;
+  border-radius: 5px;
   text-align: center;
-  margin: 10px auto;
+  margin: 10px auto 50px;
 }
 
 .primary-btn-title:hover {
@@ -16,6 +16,6 @@
   background-color: #fff;
   color: black;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 800;
   cursor: pointer;
 }

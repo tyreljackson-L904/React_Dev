@@ -55,17 +55,23 @@ form {
 
 .cta-join-header {
   font-size: 50px;
-  color: #014282;
-}
-
-.cta-form p {
-  max-width: 50%;
-  margin: 0 auto;
-  font-weight: 500;
+  color: #333;
 }
 
 .cta-description {
-  line-height: 1.5em;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.cta-description span {
+  color: #1e90ff;
+}
+
+.cta-form p {
+  max-width: 60%;
+  margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.7em;
 }
 
 .cta-search {
@@ -86,6 +92,7 @@ form {
 .cta-form-email {
   padding: 10px 0 10px 5px;
   margin-top: 50px;
+  border-radius: 5px;
 }
 
 .cta-form-btn {
