@@ -1,0 +1,19 @@
+.primary-btn-title {
+  padding: 6px 18px;
+  background-color: #0caadc;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 80px;
+  border-radius: 2px;
+}
+
+.primary-btn-title:hover {
+  padding: 5px 16px;
+  border: 2px solid black;
+  background-color: #fff;
+  color: black;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}

@@ -21,10 +21,12 @@ const Cars = () => {
   // grab the position of a car in the object array
   const selectCar = () => {
     const carIndex = Math.floor(Math.random() * cars.length)
+
     return cars[carIndex]
   }
   // pass the index selected to the browser to render
   const changeCar = () => {
+    console.log(selectCar(cars))
     newCar(selectCar(cars))
   }
 
