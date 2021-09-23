@@ -6,8 +6,7 @@
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
-  min-height: 100vh;
-
+  min-height: 70vh;
   background: linear-gradient(#1e90ff 0%, rgb(0, 191, 255) 100%);
 }
 
@@ -21,14 +20,75 @@
 
 .main-content {
   display: flex;
-  margin: 100px auto 0;
+  flex-direction: row;
+  margin: 10% 5% 0;
 }
 
 .cta-header h2 {
+  font-size: 40px;
   word-spacing: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .cta-tagline span {
   color: #fff;
+}
+
+.images img {
+  padding: 0 10px;
+}
+
+form {
+  padding: 50px 0;
+}
+
+.cta-form {
+  position: absolute;
+  left: 50%;
+  max-width: 35%;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border-radius: 15px;
+}
+
+.cta-join-header {
+  font-size: 50px;
+  color: #014282;
+}
+
+.cta-form p {
+  max-width: 50%;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.cta-description {
+  line-height: 1.5em;
+}
+
+.cta-search {
+  margin: 10px auto 0;
+}
+.cta-search span {
+  color: #1e90ff;
+}
+
+.cta-shop span {
+  color: #1e90ff;
+}
+
+.cta-save span {
+  color: #1e90ff;
+}
+
+.cta-form-email {
+  padding: 10px 0 10px 5px;
+  margin-top: 50px;
+}
+
+.cta-form-btn {
+  display: inline-flex;
+  margin: 0 auto;
 }
