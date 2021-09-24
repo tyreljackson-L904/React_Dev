@@ -46,14 +46,12 @@ function CTAForm() {
           value={value}
           onChange={handleChange}
         />
-        <div>
-          <PrimaryBtn
-            title="Join the waitlist"
-            className="cta-form-btn"
-            onKeyPress={handleKeyPress}
-            handleSubmit={handleSubmit}
-          />
-        </div>
+        <PrimaryBtn
+          title="Join the waitlist"
+          className="cta-form-btn"
+          onKeyPress={handleKeyPress}
+          handleSubmit={handleSubmit}
+        />
       </form>
     </div>
   );
