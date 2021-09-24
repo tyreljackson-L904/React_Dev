@@ -1,5 +1,7 @@
 .cta-form-btn {
   display: block;
+  width: 50%;
+  margin: 10px auto 0;
 }
 
 .cta-form {
