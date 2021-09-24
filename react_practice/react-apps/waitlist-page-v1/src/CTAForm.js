@@ -14,12 +14,6 @@ function CTAForm() {
     e.preventDefault();
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 13) {
-      handleSubmit();
-    }
-  };
-
   return (
     <div className="cta-form">
       <form action="" onSubmit={handleSubmit}>
@@ -49,8 +43,7 @@ function CTAForm() {
         <PrimaryBtn
           title="Join the waitlist"
           className="cta-form-btn"
-          onKeyPress={handleKeyPress}
-          handleSubmit={handleSubmit}
+          onClick={handleSubmit}
         />
       </form>
     </div>
