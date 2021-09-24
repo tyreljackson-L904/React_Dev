@@ -1,7 +1,7 @@
 import "./PrimaryBtn.css";
 import cx from "classnames";
 
-function PrimaryButton({ className, title, handleSubmit }) {
+function PrimaryBtn({ className, title, handleSubmit }) {
   return (
     <button
       className={cx("primary-btn", className)}
@@ -12,4 +12,4 @@ function PrimaryButton({ className, title, handleSubmit }) {
   );
 }
 
-export default PrimaryButton;
+export default PrimaryBtn;

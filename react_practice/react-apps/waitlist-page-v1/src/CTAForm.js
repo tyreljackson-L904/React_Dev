@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PrimaryButton from "./PrimaryBtn";
+import PrimaryBtn from "./PrimaryBtn";
 import "./CTAForm.css";
 
 function CTAForm() {
@@ -47,7 +47,7 @@ function CTAForm() {
           onChange={handleChange}
         />
         <div>
-          <PrimaryButton
+          <PrimaryBtn
             title="Join the waitlist"
             className="cta-form-btn"
             onKeyPress={handleKeyPress}
