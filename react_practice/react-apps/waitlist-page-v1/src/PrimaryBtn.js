@@ -3,10 +3,7 @@ import cx from "classnames";
 
 function PrimaryBtn({ className, title, handleSubmit }) {
   return (
-    <button
-      className={cx("primary-btn", className)}
-      handleSubmit={handleSubmit}
-    >
+    <button className={cx("primary-btn", className)} onClick={handleSubmit}>
       {title}
     </button>
   );
