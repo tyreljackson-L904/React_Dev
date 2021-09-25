@@ -1,0 +1,79 @@
+.card-header {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 14%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15%;
+  margin-top: 5%;
+  margin-bottom: 20%;
+}
+
+.card {
+  text-align: center;
+  background: linear-gradient(#1e90ff 0%, rgb(0, 191, 255) 100%);
+  flex-basis: 30%;
+  min-height: 50vh;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  padding-top: 5%;
+}
+
+.card h1 {
+  color: #fff;
+  font-weight: normal;
+}
+
+.card h3 {
+  font-size: 30px;
+}
+
+.card h4 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.search-card {
+  padding-top: 2%;
+  color: #fff;
+}
+
+.shop-card {
+  padding-top: 2%;
+  color: #fff;
+}
+
+.save-card {
+  padding-top: 2%;
+  color: #fff;
+}
+
+.search-description {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.shop-description {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.save-description {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.card h4 > span {
+  font-weight: bold;
+}
+
+.card h4 > span {
+  color: #fff;
+}
