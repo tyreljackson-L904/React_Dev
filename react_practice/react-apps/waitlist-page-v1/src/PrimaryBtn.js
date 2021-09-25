@@ -1,11 +1,12 @@
 import "./PrimaryBtn.css";
+import cx from "classnames";
 
-function PrimaryButton({ title, handleSubmit }) {
+function PrimaryBtn({ className, title, onClick }) {
   return (
-    <div className="primary-btn-header" handleSubmit={handleSubmit}>
-      <h5 className="primary-btn-title">{title}</h5>
-    </div>
+    <button className={cx("primary-btn", className)} onClick={onClick}>
+      {title}
+    </button>
   );
 }
 
-export default PrimaryButton;
+export default PrimaryBtn;
