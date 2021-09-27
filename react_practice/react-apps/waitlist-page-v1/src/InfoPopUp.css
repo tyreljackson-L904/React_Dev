@@ -1,0 +1,24 @@
+.pop-up-container {
+  position: fixed;
+  top: 30vh;
+  left: 45vh;
+  width: 50%;
+  background-color: rgb(191, 192, 191);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.pop-up-content {
+  color: black;
+}
+
+.close-btn {
+  padding: 0;
+  color: black;
+}
+
+.close-btn:not(.pop-up-container):hover {
+  cursor: pointer;
+  color: white;
+}

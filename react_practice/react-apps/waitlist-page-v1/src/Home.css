@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: ;
-}
-
 .page-container {
   display: flex;
   flex-direction: column;
@@ -39,79 +35,34 @@ body {
 }
 
 .images img {
-  padding: 0 10px;
+  padding: 0 20px 5px 0;
 }
 
 form {
   padding: 50px 0;
 }
-<<<<<<< HEAD
 
-.cta-form {
-  position: absolute;
-  left: 50%;
-  max-width: 35%;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+.gray-background {
+  height: 100vh;
+  background: rgb(191, 192, 191);
+}
+
+.learn-more {
+  border: none;
+  padding: 15px 25px;
+  margin: 20px 0;
+  font-weight: bold;
+  background-color: linear-gradient(
+    rgba(124, 124, 124, 0.96) 0%,
+    rgb(191, 192, 191) 100%
+  );
+  border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
     0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  border-radius: 15px;
 }
-
-.cta-join-header {
-  font-size: 50px;
-  color: #333;
-  margin-bottom: 0;
+.learn-more:hover {
+  padding: 15px 25px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
 }
-
-.cta-description {
-  max-width: 80%;
-  margin: 0 auto 50px;
-  font-weight: normal;
-}
-
-.cta-description span {
-  font-weight: bold;
-  color: #fff;
-}
-
-.cta-email-cta {
-  font-weight: 500;
-}
-
-.cta-form p {
-  max-width: 60%;
-  margin: 0 auto;
-  font-weight: 500;
-  line-height: 1.7em;
-}
-
-.cta-search {
-  margin: 10px auto 0;
-}
-.cta-search span {
-  color: #1e90ff;
-}
-
-.cta-shop span {
-  color: #1e90ff;
-}
-
-.cta-save span {
-  color: #1e90ff;
-}
-
-.cta-form-email {
-  padding: 10px 0 10px 5px;
-  margin-top: 0px;
-  border-radius: 5px;
-  border: none;
-}
-
-.cta-form-btn {
-  display: inline-flex;
-  margin: 0 auto;
-}
-=======
->>>>>>> 4380ab2ffa22158c7682686daf38390b9a428758
