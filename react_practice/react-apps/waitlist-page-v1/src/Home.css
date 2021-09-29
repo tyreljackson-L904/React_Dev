@@ -25,17 +25,27 @@
 }
 
 .cta-header h2 {
-  font-size: 40px;
+  font-size: 3vw;
   word-spacing: 10px;
   text-align: left;
 }
 
-.cta-tagline span {
+.creators-color {
   color: #fff;
 }
 
-.images img {
-  padding: 0 20px 5px 0;
+.hover-definition {
+  color: black;
+}
+
+.hover-definition:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
 }
 
 form {
@@ -61,8 +71,7 @@ form {
     0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
 .learn-more:hover {
-  padding: 15px 25px;
-  border: 2px solid black;
+  border: 1px solid black;
   background-color: white;
   cursor: pointer;
 }

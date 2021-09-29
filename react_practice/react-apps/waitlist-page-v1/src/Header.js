@@ -1,35 +1,41 @@
 import React, { useState } from "react";
-import twitter from "./images/twitter.png";
-import youtube from "./images/youtube.png";
-import facebook from "./images/facebook.png";
-import instagram from "./images/instagram.png";
-import snapchat from "./images/snapchat.png";
-import tiktok from "./images/tiktok.png";
 import InfoPopUp from "./InfoPopUp";
+import { SocialIcon } from "react-social-icons";
 
 function Header() {
   const [popUp, setPopUp] = useState(false);
 
   const showPopUp = () => {
-    setPopUp(true);
+    setPopUp(!popUp);
   };
+
   return (
     <div className="cta-header">
       <h2 className="cta-tagline">
-        Search. Shop. Save. <br /> with <span>Creators</span>
+        <span className="hover-definition" onClick={showPopUp}>
+          Search.
+          {popUp && <InfoPopUp />}
+        </span>{" "}
+        <span className="hover-definition" onClick={showPopUp}>
+          Shop. {popUp && <InfoPopUp />}
+        </span>{" "}
+        <span className="hover-definition" onClick={showPopUp}>
+          Save. {popUp && <InfoPopUp />}
+        </span>{" "}
+        <br /> with <span className="creators-color">Creators</span>
       </h2>
-      <div className="images">
-        <img src={twitter} alt="twitter" />
-        <img src={youtube} alt="twitter" />
-        <img src={facebook} alt="twitter" />
-        <img src={instagram} alt="twitter" />
-        <img src={snapchat} alt="twitter" />
-        <img src={tiktok} alt="twitter" />
+      <div className="social-icons">
+        <SocialIcon network="instagram" bgColor="#000" className="icon" />
+        <SocialIcon network="tiktok" bgColor="#000" className="icon" />
+        <SocialIcon network="youtube" bgColor="#000" className="icon" />
+        <SocialIcon network="twitter" bgColor="#000" className="icon" />
+        <SocialIcon network="snapchat" bgColor="#000" className="icon" />
+        <SocialIcon network="facebook" bgColor="#000" className="icon" />
       </div>
-      <button className="learn-more" onClick={showPopUp}>
+      {/* <button className="learn-more" onClick={showPopUp}>
         Learn More
         {popUp && <InfoPopUp />}
-      </button>
+      </button> */}
     </div>
   );
 }
