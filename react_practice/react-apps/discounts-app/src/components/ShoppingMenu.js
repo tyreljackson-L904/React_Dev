@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Dropdown from "./Dropdown";
-import "../css/DropdownLg.css";
+import "../css/Dropdown.css";
 
 function ShoppingMenu() {
   const [value, setValue] = useState("Search");
@@ -18,15 +18,16 @@ function ShoppingMenu() {
     <div className="left-container">
       <div className="containter-content">
         <h3 className="container-header">Shopping Options</h3>
-        <div className="search-container">
+        {/* <div className="search-container">
           <input
             type="text"
+            size={"40"}
             className="search-content"
             placeholder={value}
             onChange={handleChange}
             onKeyPress={handleKeyPress}
           />
-        </div>
+        </div> */}
         <Dropdown
           header="Categories"
           data={[

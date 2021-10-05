@@ -3,7 +3,7 @@
 }
 
 .dropdown {
-  width: auto;
+  width: 100%;
 }
 
 .dropdown-header {
@@ -12,10 +12,9 @@
   padding: 8px 12px;
   font-size: 12px;
   font-weight: bold;
-  background-color: #fff;
-  color: #333;
-  border-radius: 2px;
-  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+  background-color: rgb(69, 73, 95);
+  color: #fff;
+  /* box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06); */
   align-items: center;
   justify-content: space-between;
   cursor: pointer;

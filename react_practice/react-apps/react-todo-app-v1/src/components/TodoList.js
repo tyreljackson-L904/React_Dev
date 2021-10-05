@@ -11,10 +11,9 @@ const TodoList = () => {
             return
         }
 
-        const newTodos= [todo, ...todos]
+        const newTodos = [todo, ...todos]
 
         setTodos(newTodos)
-        console.log(...todos)
     }
 
     const updateTodo = (todoId, newValue) => {

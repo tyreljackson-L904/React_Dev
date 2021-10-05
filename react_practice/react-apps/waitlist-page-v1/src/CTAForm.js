@@ -30,6 +30,7 @@ function CTAForm() {
           className="cta-form-email"
           value={value}
           onChange={handleChange}
+          required
         />
         <PrimaryBtn
           title="Join the waitlist"
