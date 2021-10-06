@@ -1,0 +1,10 @@
+.grid-container {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  border: 2px solid rgb(31, 24, 76);
+}
+
+.grid-container ul {
+  list-style: none;
+}
