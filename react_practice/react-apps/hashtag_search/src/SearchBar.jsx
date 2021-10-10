@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
+import { client } from "./API";
+import "./API";
 
 const SearchBar = () => {
   const [state, setState] = useState();
@@ -7,30 +9,13 @@ const SearchBar = () => {
 
   const handleChange = (e) => setValue(e.target.value);
 
-  const defaultFetchOptions = {
-    method: "GET",
-    mode: "cors",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAADyqUQEAAAAARDhsa%2B0dst9kxaq1aP8qM870Sns%3DJ6RjMvnU4ZwHuRguB75W2YiB49MYvRUqkHQoFnBoToSCfZC3qy`,
-    },
-  };
-
-  const getResults = async () => {
-    // const queryParam = `${value}`
-    const url = `https://api.twitter.com/2/tweets/search/recent?query=%23apple`;
-    const response = await fetch(url, defaultFetchOptions);
+  const getHashtagSearchResults = async () => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/ditto`);
     const data = await response.json();
-    return data;
+    console.log(data);
   };
 
-  getResults()
-    .then((data) => {
-      console.log("resolved", data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  console.log(getHashtagSearchResults());
 
   return (
     <div className="search">

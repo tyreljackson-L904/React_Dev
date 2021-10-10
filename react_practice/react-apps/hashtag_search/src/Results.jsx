@@ -1,11 +1,7 @@
-import { useState } from "react";
+import React from "react";
 import "./Results.css";
 
-const Results = (props) => {
-  const [loading, setLoading] = useState(false);
-  const [state, setState] = useState();
-  const [results, setResults] = useState([]);
-
+const Results = () => {
   return (
     <div className="grid-container">
       <ul className="results-list">

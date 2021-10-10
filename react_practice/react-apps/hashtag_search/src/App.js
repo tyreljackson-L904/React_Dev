@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import Results from "./Results";
 import "./App.css";
+// import FetchData from "./FetchData";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <div className="box">
           <h1 className="title">Hashtag Search</h1>
           <SearchBar />
+          {/* <FetchData /> */}
           <Results />
         </div>
       </div>
