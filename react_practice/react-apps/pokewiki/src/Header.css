@@ -1,0 +1,19 @@
+.header-container {
+  display: inline-flex;
+  min-width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title {
+  display: flex;
+  min-width: 20%;
+  margin-top: 2%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-name {
+  font-size: 40px;
+  font-style: italic;
+}
