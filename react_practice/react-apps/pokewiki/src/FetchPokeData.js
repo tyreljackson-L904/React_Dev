@@ -1,13 +1,7 @@
 import React from "react";
 import "./FetchPokeData.css";
 
-const FetchPokeData = () => {
-  const fetchPokemons = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/ditto`);
-    const data = await response.json();
-    console.log(data);
-  };
-
+const FetchPokeData = ({ fetchPokemons }) => {
   return (
     <div className="btn-container">
       <button className="fetch-btn" onClick={fetchPokemons}>

@@ -2,18 +2,12 @@ import React, { useState } from "react";
 import PokeCard from "./PokeCard";
 import "./PokeGrid.css";
 
-const PokeGrid = () => {
-  const [selected, setSelected] = useState(false);
+const PokeGrid = (data) => {
+  // const [selected, setSelected] = useState(false);
   const [pokemonName, setPokemonName] = useState();
-  const [pokemons, setPokemons] = useState([
-    {
-      id: "1",
-      name: "Charmeleon",
-      img: "img",
-      hp: "50HP",
-      types: "Fire",
-    },
-  ]);
+  const [pokemons, setPokemons] = useState([]);
+
+  console.log(pokemons);
 
   return (
     <div className="grid-container">
