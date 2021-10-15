@@ -1,30 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+
 import PokeCard from "./PokeCard";
 import "./PokeGrid.css";
 
-const PokeGrid = (data) => {
-  // const [selected, setSelected] = useState(false);
-  const [pokemonName, setPokemonName] = useState();
-  const [pokemons, setPokemons] = useState([]);
-
-  console.log(pokemons);
-
+const PokeGrid = ({ data, handleClick, value }) => {
+  console.log(handleClick);
   return (
-    <div className="grid-container">
-      <ul className="pokemon-grid">
-        {pokemons.map((pokemon) => {
-          return (
-            <li className="grid-item" key={pokemon.id}>
-              <PokeCard
-                name={pokemon.name}
-                hp={pokemon.hp}
-                types={pokemon.types}
-              />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul className="grid-container">
+      {data.map((pokemon) => {
+        return (
+          <PokeCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            handleClick={handleClick}
+            value={value}
+          />
+        );
+      })}
+    </ul>
   );
 };
 

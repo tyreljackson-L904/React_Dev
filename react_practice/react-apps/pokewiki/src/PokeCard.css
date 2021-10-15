@@ -1,0 +1,6 @@
+.grid-list-item {
+  box-shadow: 3px 3px 10px 6px #0000000f;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}

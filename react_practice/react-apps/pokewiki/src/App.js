@@ -1,23 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
-import FetchPokeData from "./FetchPokeData";
 import PokeGrid from "./PokeGrid";
+import PokemonDetail from "./Pokemondetail";
 
 function App() {
-  const fetchPokemons = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20`);
+  const [pokemons, setPokemons] = useState([]);
+
+  const fetchPokemon = async () => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`);
     const data = await response.json();
-    console.log(data);
-    return data;
+
+    const pokemonData = await Promise.all(
+      data.results.map(async (pokemon) => {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+        );
+        return response.json();
+      })
+    );
+
+    setPokemons(pokemonData);
   };
 
+  useEffect(() => {
+    fetchPokemon();
+  }, []);
+
+  // const handleClick = (e) => {
+  //   console.log(e);
+  //   return (
+  //     <Route path="/pokemondetail" component={PokemonDetail}>
+  //       <PokemonDetail />;
+  //     </Route>
+  //   );
+  // };
+
   return (
-    <div className="App">
-      <Header />
-      <FetchPokeData fetchPokemons={fetchPokemons} />
-      <PokeGrid fetchPokemons={fetchPokemons.data} />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <PokeGrid data={pokemons} />
+          </Route>
+          <Route path="/pokemondetail">
+            <PokemonDetail data={pokemons} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
