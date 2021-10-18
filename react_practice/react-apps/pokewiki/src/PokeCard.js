@@ -1,27 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import "./PokeCard.css";
+import PokemonDetail from "./Pokemondetail";
 
-const PokeCard = (props) => {
-  const [selected, setSelected] = useState(null);
-
-  const getValue = (value) => {
-    setSelected(value);
+const PokeCard = ({ pokemon, value, callback }) => {
+  const handleClick = (value) => {
+    value = pokemon;
+    console.log(value);
+    return;
   };
+
   return (
     <Link
-      to="/pokemondetail"
-      key={props.pokemon.id}
+      to={callback}
+      key={pokemon.id}
       className="grid-list-item"
-      onClick={getValue}
+      onClick={handleClick}
+      value={value}
     >
       <img
-        src={props.pokemon.sprites.front_shiny}
-        alt={props.pokemon.name}
+        src={pokemon.sprites.front_shiny}
+        alt={pokemon.name}
         className="pokemon-img"
       />
-      <h2 className="pokemon-name">{props.pokemon.name}</h2>
-      <h4 className="pokemon-hitpoints">HP: {props.pokemon.base_experience}</h4>
+      <h2 className="pokemon-name">{pokemon.name}</h2>
+      <h4 className="pokemon-hitpoints">HP: {pokemon.base_experience}</h4>
     </Link>
   );
 };

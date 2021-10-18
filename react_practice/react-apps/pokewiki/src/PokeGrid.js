@@ -3,19 +3,11 @@ import React from "react";
 import PokeCard from "./PokeCard";
 import "./PokeGrid.css";
 
-const PokeGrid = ({ data, handleClick, value }) => {
-  console.log(handleClick);
+const PokeGrid = (props) => {
   return (
     <ul className="grid-container">
-      {data.map((pokemon) => {
-        return (
-          <PokeCard
-            key={pokemon.id}
-            pokemon={pokemon}
-            handleClick={handleClick}
-            value={value}
-          />
-        );
+      {props.data.map((pokemon) => {
+        return <PokeCard key={pokemon.id} pokemon={pokemon} />;
       })}
     </ul>
   );

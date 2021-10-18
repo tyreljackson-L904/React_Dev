@@ -5,7 +5,7 @@ import Header from "./Header";
 import PokeGrid from "./PokeGrid";
 import PokemonDetail from "./Pokemondetail";
 
-function App() {
+function App(props) {
   const [pokemons, setPokemons] = useState([]);
 
   const fetchPokemon = async () => {
@@ -27,16 +27,7 @@ function App() {
   useEffect(() => {
     fetchPokemon();
   }, []);
-
-  // const handleClick = (e) => {
-  //   console.log(e);
-  //   return (
-  //     <Route path="/pokemondetail" component={PokemonDetail}>
-  //       <PokemonDetail />;
-  //     </Route>
-  //   );
-  // };
-
+  console.log(props);
   return (
     <Router>
       <div className="App">
@@ -45,9 +36,11 @@ function App() {
           <Route exact path="/">
             <PokeGrid data={pokemons} />
           </Route>
-          <Route path="/pokemondetail">
-            <PokemonDetail data={pokemons} />
-          </Route>
+          {props.callback && (
+            <Route to="/pokemondetail" pokemon={props.value}>
+              <PokemonDetail />
+            </Route>
+          )}
         </Switch>
       </div>
     </Router>
