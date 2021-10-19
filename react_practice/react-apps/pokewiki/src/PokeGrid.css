@@ -7,3 +7,7 @@
   text-align: center;
   list-style: none;
 }
+
+.pokemon-detail {
+  display: flex;
+}

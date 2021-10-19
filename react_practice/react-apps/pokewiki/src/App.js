@@ -7,6 +7,7 @@ import PokemonDetail from "./Pokemondetail";
 
 function App(props) {
   const [pokemons, setPokemons] = useState([]);
+  const [selected, setSelected] = useState(null);
 
   const fetchPokemon = async () => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`);
@@ -27,20 +28,24 @@ function App(props) {
   useEffect(() => {
     fetchPokemon();
   }, []);
-  console.log(props);
+
+  // callback function to set clicked pokemon value as the value of 'selected' state and pass to PokemonDetail component
+  const selectPokemon = (pokemon) => {
+    console.log(pokemon);
+    setSelected(pokemon);
+  };
+
   return (
     <Router>
       <div className="App">
         <Header />
         <Switch>
           <Route exact path="/">
-            <PokeGrid data={pokemons} />
+            <PokeGrid data={pokemons} onSelect={selectPokemon} />
           </Route>
-          {props.callback && (
-            <Route to="/pokemondetail" pokemon={props.value}>
-              <PokemonDetail />
-            </Route>
-          )}
+          <Route path="/pokemondetail">
+            <PokemonDetail value={selected} />
+          </Route>
         </Switch>
       </div>
     </Router>
