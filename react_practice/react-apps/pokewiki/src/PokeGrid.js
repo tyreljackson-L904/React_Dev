@@ -8,7 +8,13 @@ const PokeGrid = (props) => {
   return (
     <ul className="grid-container">
       {props.data.map((pokemon) => {
-        return <PokeCard key={pokemon.id} pokemon={pokemon} />;
+        return (
+          <PokeCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            onSelect={props.onSelect}
+          />
+        );
       })}
     </ul>
   );
