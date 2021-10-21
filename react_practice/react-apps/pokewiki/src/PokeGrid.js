@@ -8,7 +8,15 @@ const PokeGrid = ({ data, onSelect }) => {
     <ul className="grid-container">
       {data.map((pokemon) => {
         return (
-          <PokeCard key={pokemon.id} pokemon={pokemon} onSelect={onSelect} />
+          <PokeCard
+            key={pokemon.id}
+            onSelect={onSelect}
+            pokemon={pokemon}
+            img={pokemon.sprites.front_default}
+            name={pokemon.name}
+            hp={pokemon.base_experience}
+            type={pokemon.types[0].type.name}
+          />
         );
       })}
     </ul>

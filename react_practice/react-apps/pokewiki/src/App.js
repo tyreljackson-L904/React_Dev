@@ -5,7 +5,7 @@ import Header from "./Header";
 import PokeGrid from "./PokeGrid";
 import PokemonDetail from "./Pokemondetail";
 
-function App(props) {
+function App() {
   const [pokemons, setPokemons] = useState([]);
   const [selected, setSelected] = useState(null);
 
@@ -29,7 +29,6 @@ function App(props) {
     fetchPokemon();
   }, []);
 
-  // callback function to set clicked pokemon value as the value of 'selected' state and pass to PokemonDetail component
   const selectPokemon = (pokemon) => {
     setSelected(pokemon);
   };
@@ -43,7 +42,7 @@ function App(props) {
             <PokeGrid data={pokemons} onSelect={selectPokemon} />
           </Route>
           <Route path="/pokemondetail">
-            <PokemonDetail value={selected} />
+            <PokemonDetail pokemon={selected} />
           </Route>
         </Switch>
       </div>
