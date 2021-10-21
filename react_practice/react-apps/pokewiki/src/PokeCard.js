@@ -1,22 +1,24 @@
-import React, { useState } from "react";
-import { Link, Route } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./PokeCard.css";
-import PokemonDetail from "./Pokemondetail";
 
 const PokeCard = ({ pokemon, onSelect }) => {
   const handleClick = () => {
-    console.log(pokemon);
     onSelect(pokemon); // when this is invoked here i want to pass the "value" in as a param to the callback function in the App component
   };
+
+  const type = pokemon.types[0].type.name;
+  const style = type + " grid-list-item";
+
   return (
     <Link
       to="/pokemondetail"
       key={pokemon.id}
-      className="grid-list-item"
+      className={style}
       onClick={handleClick}
     >
       <img
-        src={pokemon.sprites.front_shiny}
+        src={pokemon.sprites.front_default}
         alt={pokemon.name}
         className="pokemon-img"
       />

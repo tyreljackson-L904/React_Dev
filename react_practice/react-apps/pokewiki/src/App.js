@@ -31,7 +31,6 @@ function App(props) {
 
   // callback function to set clicked pokemon value as the value of 'selected' state and pass to PokemonDetail component
   const selectPokemon = (pokemon) => {
-    console.log(pokemon);
     setSelected(pokemon);
   };
 
