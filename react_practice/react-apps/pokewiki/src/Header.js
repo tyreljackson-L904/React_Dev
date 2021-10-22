@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="title">
-        <h1 className="title-name">PokeWiki</h1>
+        <h1 className="title-name">Pokédex</h1>
         <img
           src={pokeball}
           alt="pokeball"

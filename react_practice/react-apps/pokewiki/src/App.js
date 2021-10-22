@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./Header";
 import PokeGrid from "./PokeGrid";
 import PokemonDetail from "./Pokemondetail";
+import SearchPokemon from "./SearchPokemon";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);

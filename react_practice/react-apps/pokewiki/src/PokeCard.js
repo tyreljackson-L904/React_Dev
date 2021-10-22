@@ -5,7 +5,7 @@ import "./PokeCard.css";
 const PokeCard = ({ pokemon, id, img, name, hp, type, onSelect }) => {
   const style = type + " grid-list-item";
   const handleClick = () => {
-    onSelect(pokemon); // when this is invoked here i want to pass the "value" in as a param to the callback function in the App component
+    onSelect(pokemon);
   };
 
   return (
