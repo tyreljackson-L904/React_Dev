@@ -4,14 +4,21 @@ import "./App.css";
 import Header from "./Header";
 import PokeGrid from "./PokeGrid";
 import PokemonDetail from "./Pokemondetail";
-import SearchPokemon from "./SearchPokemon";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [page, setPage] = useState(1);
 
   const fetchPokemon = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100`);
+    setPage(page + 1);
+
+    const perPage = 8;
+    const offset = page * perPage - perPage;
+
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offset}`
+    );
     const data = await response.json();
 
     const pokemonData = await Promise.all(
@@ -40,7 +47,11 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <PokeGrid data={pokemons} onSelect={selectPokemon} />
+            <PokeGrid
+              data={pokemons}
+              onSelect={selectPokemon}
+              fetchPokemon={fetchPokemon}
+            />
           </Route>
           <Route path="/pokemondetail">
             <PokemonDetail pokemon={selected} />

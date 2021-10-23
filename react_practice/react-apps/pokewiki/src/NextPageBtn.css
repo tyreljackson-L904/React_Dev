@@ -1,0 +1,10 @@
+.next-btn {
+  border: 1px solid black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: rgb(239, 0, 0);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}

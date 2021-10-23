@@ -1,54 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PokeCard from "./PokeCard";
 import "./PokeGrid.css";
-import { AiOutlineSearch } from "react-icons/ai";
+import PreviousPageBtn from "./PreviousPageBtn";
+import NextPageBtn from "./NextPageBtn";
 
-const PokeGrid = ({ data, onSelect }) => {
+const PokeGrid = ({ data, onSelect, fetchPokemon }) => {
   // state for value of user input
-  const [state, setState] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   // state for the selected pokemon from the filter results
+  const [state, setState] = useState([]);
 
-  // state to show if the user is entering an input
-  const [isEditing, setIsEditing] = useState(false);
-
-  const filter = (e) => {
+  const findPokemon = (e) => {
     const input = e.target.value;
-    if (input !== "") {
-      let result = data.filter((pokemon) => {
-        return pokemon.name.toLowerCase().startsWith(input.toLowerCase());
-      });
-      setState(input);
-      setIsEditing(true);
-      result.map((pokemon) => {
-        return (
-          <PokeCard
-            key={pokemon.id}
-            onSelect={onSelect}
-            pokemon={pokemon}
-            img={pokemon.sprites.front_default}
-            name={pokemon.name}
-            hp={pokemon.base_experience}
-            type={pokemon.types[0].type.name}
-          />
-        );
-      });
-    } else {
-      return;
-    }
-    return;
+    setSearchTerm(input);
+    data.filter((pokemon) => {
+      if (pokemon.name.startsWith(searchTerm.toLowerCase())) {
+        setState((newArr) => [...newArr, pokemon]);
+      }
+    });
   };
 
   return (
     <div className="">
       <div className="search">
-        {/* <AiOutlineSearch className="search-icon" /> */}
         <input
           type="text"
           placeholder="Search pokemon..."
           className="search-input"
-          onChange={filter}
+          onChange={findPokemon}
         />
       </div>
+
       <ul className="grid-container">
         {data.map((pokemon) => {
           return (
@@ -60,10 +42,15 @@ const PokeGrid = ({ data, onSelect }) => {
               name={pokemon.name}
               hp={pokemon.base_experience}
               type={pokemon.types[0].type.name}
+              order={pokemon.order}
             />
           );
         })}
       </ul>
+      <div className="page-controls">
+        <PreviousPageBtn fetchPokemon={fetchPokemon} />
+        <NextPageBtn fetchPokemon={fetchPokemon} />
+      </div>
     </div>
   );
 };

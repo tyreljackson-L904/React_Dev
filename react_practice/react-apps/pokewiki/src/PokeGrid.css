@@ -15,11 +15,13 @@
 }
 
 .search-input {
-  padding: 10px 40px;
+  padding-left: 10px;
   width: 315px;
+  height: 35px;
   border-top: none;
   border-left: none;
   border-right: none;
+  border-bottom: 2px solid red;
 }
 
 .search-input:focus {
@@ -28,4 +30,11 @@
 
 .pokemon-detail {
   display: flex;
+}
+
+.page-controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 20px 50px;
 }
