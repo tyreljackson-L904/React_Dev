@@ -9,11 +9,10 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [selected, setSelected] = useState(null);
   const [page, setPage] = useState(1);
+  const [url, setUrl] = useState("");
 
-  const fetchPokemon = async () => {
-    setPage(page + 1);
-
-    const perPage = 8;
+  const fetchPokemon = async (page) => {
+    const perPage = 10;
     const offset = page * perPage - perPage;
 
     const response = await fetch(
@@ -34,8 +33,8 @@ function App() {
   };
 
   useEffect(() => {
-    fetchPokemon();
-  }, []);
+    fetchPokemon(page);
+  }, [page]);
 
   const selectPokemon = (pokemon) => {
     setSelected(pokemon);
@@ -50,7 +49,8 @@ function App() {
             <PokeGrid
               data={pokemons}
               onSelect={selectPokemon}
-              fetchPokemon={fetchPokemon}
+              onClickPrevious={() => setPage(Math.max(page - 1, 1))}
+              onClickNext={() => setPage(page + 1)}
             />
           </Route>
           <Route path="/pokemondetail">

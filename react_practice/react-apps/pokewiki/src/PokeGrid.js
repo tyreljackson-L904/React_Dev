@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PokeCard from "./PokeCard";
 import "./PokeGrid.css";
-import PreviousPageBtn from "./PreviousPageBtn";
+import Button from "./PreviousPageBtn";
 import NextPageBtn from "./NextPageBtn";
 
-const PokeGrid = ({ data, onSelect, fetchPokemon }) => {
+const PokeGrid = ({ data, onSelect, onClickPrevious, onClickNext }) => {
   // state for value of user input
   const [searchTerm, setSearchTerm] = useState("");
   // state for the selected pokemon from the filter results
-  const [state, setState] = useState([]);
 
   const findPokemon = (e) => {
     const input = e.target.value;
     setSearchTerm(input);
-    data.filter((pokemon) => {
-      if (pokemon.name.startsWith(searchTerm.toLowerCase())) {
-        setState((newArr) => [...newArr, pokemon]);
-      }
-    });
   };
+
+  const filteredPokemon = data.filter((pokemon) => {
+    return pokemon.name.startsWith(searchTerm.toLowerCase());
+  });
 
   return (
     <div className="">
@@ -30,9 +28,8 @@ const PokeGrid = ({ data, onSelect, fetchPokemon }) => {
           onChange={findPokemon}
         />
       </div>
-
       <ul className="grid-container">
-        {data.map((pokemon) => {
+        {filteredPokemon.map((pokemon) => {
           return (
             <PokeCard
               key={pokemon.id}
@@ -48,8 +45,8 @@ const PokeGrid = ({ data, onSelect, fetchPokemon }) => {
         })}
       </ul>
       <div className="page-controls">
-        <PreviousPageBtn fetchPokemon={fetchPokemon} />
-        <NextPageBtn fetchPokemon={fetchPokemon} />
+        <Button onClick={onClickPrevious}>{"<"} Prev</Button>
+        <Button onClick={onClickNext}>Next {">"}</Button>
       </div>
     </div>
   );

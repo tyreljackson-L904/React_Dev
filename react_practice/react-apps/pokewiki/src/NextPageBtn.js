@@ -1,10 +1,10 @@
 import React from "react";
 import "./NextPageBtn.css";
 
-const NextPageBtn = ({ fetchPokemon }) => {
+const NextPageBtn = ({ onClick }) => {
   return (
     <div className="button">
-      <button className="next-btn" onClick={fetchPokemon} path="/">
+      <button className="next-btn" onClick={onClick} path="/">
         Next {">"}
       </button>
     </div>

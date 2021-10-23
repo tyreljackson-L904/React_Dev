@@ -1,19 +1,14 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import "./PreviousPageBtn.css";
 
-const PreviousPageBtn = ({ fetchPokemon }) => {
-  const history = useHistory();
-  const handleClick = () => {
-    history.goBack();
-  };
+const Button = ({ onClick, children }) => {
   return (
     <div className="button">
-      <button className="previous-btn" onClick={handleClick} path="/">
-        {"<"} Prev
+      <button className="previous-btn" onClick={onClick}>
+        {children}
       </button>
     </div>
   );
 };
 
-export default PreviousPageBtn;
+export default Button;
