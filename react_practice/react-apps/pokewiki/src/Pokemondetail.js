@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Pokemondetail.css";
 import BackButton from "./BackButton";
 
 const PokemonDetail = ({ pokemon }) => {
+  const [current, setCurrent] = useState(pokemon);
+
+  useEffect(() => {
+    localStorage.setItem(JSON.stringify(current));
+    const getPokemonData = async () => {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+      );
+      return response.json();
+    };
+    setCurrent(getPokemonData);
+  }, []);
+
   const type = pokemon.types[0].type.name;
   const style = type + " wrapper";
   const img = pokemon.sprites.other.dream_world.front_default;

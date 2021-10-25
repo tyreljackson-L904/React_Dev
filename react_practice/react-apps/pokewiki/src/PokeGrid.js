@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PokeCard from "./PokeCard";
 import "./PokeGrid.css";
 import Button from "./PreviousPageBtn";
-import NextPageBtn from "./NextPageBtn";
 
 const PokeGrid = ({ data, onSelect, onClickPrevious, onClickNext }) => {
   // state for value of user input
