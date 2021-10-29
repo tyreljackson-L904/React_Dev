@@ -21,3 +21,12 @@
   flex-basis: 80%;
   align-self: flex-start;
 }
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.list-item {
+  list-style: none;
+}

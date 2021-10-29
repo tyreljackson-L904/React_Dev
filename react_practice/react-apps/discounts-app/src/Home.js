@@ -5,6 +5,7 @@ import FilterResults from "./FilterResults";
 import HomeBanner from "./components/HomeBanner";
 import HomeSearchBar from "./components/HomeSearchBar";
 import Card from "./components/Card";
+import { data } from "./MockData.js";
 
 function Home() {
   return (
@@ -18,7 +19,21 @@ function Home() {
           <HomeSearchBar />
           <FilterResults />
         </div>
-        <Card />
+        <div className="search-results">
+          {data.map((creator) => {
+            return (
+              <ul className="search-list">
+                <li className="list-item" key={creator.id}>
+                  <Card
+                    avatar={creator.avatar}
+                    fName={creator.first_name}
+                    lName={creator.last_name}
+                  />
+                </li>
+              </ul>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
