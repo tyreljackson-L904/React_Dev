@@ -3,26 +3,24 @@ import "./Pokemondetail.css";
 import BackButton from "./BackButton";
 
 const PokemonDetail = ({ pokemon }) => {
-  const [current, setCurrent] = useState(pokemon);
+  const [current, setCurrent] = useState(
+    JSON.parse(localStorage.getItem("pokemon")) || pokemon
+  );
 
   useEffect(() => {
-    localStorage.setItem(JSON.stringify(current));
-    const getPokemonData = async () => {
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-      );
-      return response.json();
-    };
-    setCurrent(getPokemonData);
+    localStorage.setItem("pokemon", JSON.stringify(pokemon));
+    if (localStorage.getItem("pokemon")) {
+      JSON.parse(localStorage.getItem("pokemon"));
+    }
   }, []);
 
-  const type = pokemon.types[0].type.name;
+  const type = current.types[0].type.name;
   const style = type + " wrapper";
-  const img = pokemon.sprites.other.dream_world.front_default;
-  const name = pokemon.name;
-  const hp = pokemon.base_experience;
-  const move = pokemon.moves[0].move.name;
-  const abilities = pokemon.abilities[0].ability.name;
+  const img = current.sprites.other.dream_world.front_default;
+  const name = current.name;
+  const hp = current.base_experience;
+  const move = current.moves[0].move.name;
+  const abilities = current.abilities[0].ability.name;
 
   return (
     <div className="">
