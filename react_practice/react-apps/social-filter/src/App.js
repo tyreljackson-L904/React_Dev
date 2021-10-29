@@ -7,14 +7,14 @@ import Grid from "./Grid.js";
 function App() {
   const [input, setInput] = useState("");
   const [searchData, setSearchData] = useState("");
-  const handleClick = () => {};
+  const handleClick = (search) => {};
   const handleChange = (e) => {
     setInput(e.target.value);
   };
   const title = "Search Filter";
 
   const getData = async () => {
-    const res = await fetch();
+    const res = await fetch(``);
     const data = await res.json();
     setSearchData(data);
   };
