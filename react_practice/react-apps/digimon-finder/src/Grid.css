@@ -1,0 +1,19 @@
+.grid-container {
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+  list-style: none;
+  list-style: none;
+}
+
+.grid-item {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px 6px #0000000f;
+}
