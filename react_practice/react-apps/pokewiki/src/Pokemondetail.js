@@ -12,7 +12,7 @@ const PokemonDetail = ({ pokemon }) => {
     if (localStorage.getItem("pokemon")) {
       JSON.parse(localStorage.getItem("pokemon"));
     }
-  }, []);
+  }, [pokemon]);
 
   const type = current.types[0].type.name;
   const style = type + " wrapper";
