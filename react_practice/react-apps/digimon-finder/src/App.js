@@ -17,7 +17,7 @@ function App() {
   };
 
   const handleClick = (e) => {
-    setInput("");
+    setInput(e.target.value);
   };
 
   const getDigimon = async () => {
@@ -40,7 +40,7 @@ function App() {
           btnTitle={btnTitle}
           onClick={handleClick}
         />
-        <Grid data={search} />
+        <Grid data={search} input={input}/>
       </div>
     </div>
   );
