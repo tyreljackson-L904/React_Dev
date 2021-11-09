@@ -1,0 +1,36 @@
+.container {
+  padding: 0 15px;
+  background-color: beige;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__title {
+  font-size: 20px;
+}
+
+.nav__title span {
+  color: rgb(0, 172, 229);
+}
+
+.nav__links {
+  display: flex;
+  width: 75%;
+  justify-content: start;
+  list-style: none;
+  font-weight: 500;
+}
+
+.nav__item {
+  padding: 0 10px;
+}
+
+.right__nav__menu {
+  min-width: 100px;
+  justify-content: center;
+}
