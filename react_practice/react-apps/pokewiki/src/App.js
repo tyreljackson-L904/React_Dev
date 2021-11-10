@@ -52,7 +52,7 @@ function App() {
               onClickNext={() => setPage(page + 1)}
             />
           </Route>
-          <Route path="/pokemondetail">
+          <Route path="/pokemondetail/:pokemonName">
             <PokemonDetail pokemon={selected} />
           </Route>
         </Switch>

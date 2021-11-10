@@ -15,8 +15,15 @@
 }
 
 .detail-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 0.5rem 1rem;
   padding-left: 40px;
   margin: auto 0;
+}
+
+.detail-wrapper span {
+  font-weight: 600;
 }
 
 .image-name {
@@ -33,7 +40,12 @@
   list-style: none;
 }
 
+.hp-text {
+  font-weight: 600;
+}
+
 .hp-color {
+  font-weight: 600;
   color: red;
 }
 
