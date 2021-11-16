@@ -3,7 +3,7 @@ import "./App.css";
 // import { Router, Route, Link } from "react-router-dom";
 import Header from "./Header";
 import Search from "./Search";
-import DisplayResults from "./DisplayResults";
+import ResultsTabs from "./DisplayResults";
 
 const axios = require("axios");
 
@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <Header />
       <Search value={value} onChange={handleChange} onClick={getUserData} />
-      <DisplayResults user={user} />
+      <ResultsTabs user={user} />
     </div>
   );
 }

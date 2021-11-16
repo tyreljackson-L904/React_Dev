@@ -1,0 +1,30 @@
+.tab-list {
+  display: flex;
+  width: 60%;
+  margin: 1rem auto 2rem;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #39a3db;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.tab-list:nth-child(odd) {
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.tab-item {
+  text-decoration: none;
+  transition: all 0.7s;
+  font-weight: 600;
+  color: rgb(132, 132, 132);
+}
+
+.tab-list .active {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  /* background-color: rgb(171, 216, 221); */
+}
