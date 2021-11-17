@@ -26,20 +26,25 @@ const ResultsTabs = () => {
           <Link
             to="/:user/home"
             className={activeTab === "Home" ? "active" : listItemClassName}
+            onClick={handleClickTab1}
           >
-            <h4 onClick={handleClickTab1}>Home</h4>
+            <h4>Home</h4>
           </Link>
+
           <Link
             to="/:user/followers"
             className={activeTab === "Followers" ? "active" : listItemClassName}
+            onClick={handleClickTab2}
           >
-            <h4 onClick={handleClickTab2}>Followers</h4>
+            <h4>Followers</h4>
           </Link>
+
           <Link
             to="/:user/repositories"
             className={activeTab === "Repos" ? "active" : listItemClassName}
+            onClick={handleClickTab3}
           >
-            <h4 onClick={handleClickTab3}>Repos</h4>
+            <h4>Repos</h4>
           </Link>
         </ul>
         <div className="current-tab">
