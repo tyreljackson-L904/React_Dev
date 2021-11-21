@@ -1,0 +1,63 @@
+.card-container {
+  width: 100%;
+}
+
+.card {
+  width: 40%;
+  text-align: center;
+  background-color: #4b84c5;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+.circle-avatar img {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.name {
+  margin-bottom: 0;
+}
+
+.username {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.user-stats {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-column-gap: 10px;
+  color: #fff;
+}
+
+.user-stats h4 {
+  font-weight: 400;
+}
+
+.user-stats p {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.user-stats .text {
+  margin-bottom: 0;
+}
+
+.followers {
+  border-radius: 10px;
+  background-color: rgb(84, 84, 84);
+}
+
+.following {
+  border-radius: 10px;
+  background-color: rgb(84, 84, 84);
+}
+
+.repos {
+  border-radius: 10px;
+  background-color: rgb(84, 84, 84);
+}

@@ -11,7 +11,7 @@ const Search = ({ onChange, onClick }) => {
         onChange={onChange}
         size={80}
       />
-      <button className="search-btn" onClick={onClick}>
+      <button type='submit' className="search-btn" onClick={onClick}>
         Fetch User
       </button>
     </div>

@@ -1,13 +1,19 @@
 import React from "react";
+import UserCard from "../UserCard";
+// import { useParams } from "react-router-dom";
 
-const Home = ({ title, onClick }) => {
+const Home = ({ searchResult, onClick, title }) => {
+  console.log(searchResult);
+
+  // const user = searchResult;
+
   return (
     <div className="home-container">
-      <div className="title" onClick={onClick}>
+      {/* <div className="title" onClick={onClick}>
         {title}
-      </div>
+      </div> */}
       <div className="main-content">
-        <p>Home</p>
+        <UserCard user={searchResult} />
       </div>
     </div>
   );

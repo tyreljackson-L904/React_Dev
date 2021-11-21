@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useParams, useLocation } from "react";
 import Home from "./ResultsTabs/Home";
 import Followers from "./ResultsTabs/Followers";
 import Repositories from "./ResultsTabs/Repositories";
-import "./DisplayResults.css";
-import { Link } from "react-router-dom";
+import "./ResultsTabs.css";
+import { Routes, Route, Link } from "react-router-dom";
 
-const ResultsTabs = () => {
+const ResultsTabs = ({ searchResult }) => {
+  console.log(searchResult);
   const [activeTab, setActiveTab] = useState("Home");
   const listItemClassName = "tab-item";
+  // const location = useLocation();
+  // const { userData } = location.state;
 
   const handleClickTab1 = () => {
     setActiveTab("Home");
@@ -24,7 +27,10 @@ const ResultsTabs = () => {
       <div className="header-container">
         <ul className="tab-list">
           <Link
-            to="/:user/home"
+            to={{
+              pathname: "/home",
+              state: searchResult,
+            }}
             className={activeTab === "Home" ? "active" : listItemClassName}
             onClick={handleClickTab1}
           >
@@ -32,7 +38,10 @@ const ResultsTabs = () => {
           </Link>
 
           <Link
-            to="/:user/followers"
+            to={{
+              pathname: "/:user/followers",
+              state: searchResult.followers,
+            }}
             className={activeTab === "Followers" ? "active" : listItemClassName}
             onClick={handleClickTab2}
           >
@@ -48,7 +57,7 @@ const ResultsTabs = () => {
           </Link>
         </ul>
         <div className="current-tab">
-          {activeTab === "Home" && <Home />}
+          {activeTab === "Home" && <Home searchResult={searchResult} />}
           {activeTab === "Followers" && <Followers />}
           {activeTab === "Repos" && <Repositories />}
         </div>

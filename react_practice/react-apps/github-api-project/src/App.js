@@ -1,16 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-// import { Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "./Header";
 import Search from "./Search";
-import ResultsTabs from "./DisplayResults";
+import ResultsTabs from "./ResultsTabs";
 
-const axios = require("axios");
+// const axios = require("axios");
 
 function App() {
   const [value, setValue] = useState("");
-  const [user, setUser] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [searchResult, setSearchResult] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -18,22 +18,29 @@ function App() {
 
   const getUserData = async () => {
     try {
-      const response = await axios.get(`https://api.github.com/users/${value}`);
-      const userData = await response.data;
+      const url = `https://api.github.com/users/${value}`;
+      const response = await fetch(url, {
+        headers: {
+          Authorization: `bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+        },
+      });
+      const data = await response.json();
 
-      setUser(userData);
-      console.log(userData);
-      setIsLoading(false);
+      setSearchResult(data);
+      // setIsLoading(false);
     } catch (err) {
       console.error(err);
     }
   };
+  // useEffect(() => {
+  //   getUserData();
+  // }, [user]);
 
   return (
     <div className="App">
       <Header />
       <Search value={value} onChange={handleChange} onClick={getUserData} />
-      <ResultsTabs user={user} />
+      <ResultsTabs searchResult={searchResult} />
     </div>
   );
 }
