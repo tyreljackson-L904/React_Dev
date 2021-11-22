@@ -1,0 +1,42 @@
+.follower-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.follower-card {
+  width: 60%;
+  display: flex;
+  margin: 0 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.follower-avatar {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin-right: 25px;
+}
+
+.follower-names {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.follow-btn {
+  font-weight: 600;
+  background-color: #2fbb4f;
+  border: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.follow-btn:active {
+  background-color: #fff;
+}
