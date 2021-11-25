@@ -1,11 +1,14 @@
 import React from "react";
 import "./Login.css";
-import Button from "../Button";
+import { LoginButton } from "../Buttons/Button";
+import { FacebookLoginButton } from "../Buttons/FacebookLoginButton";
+import { TwitterLoginButton } from "../Buttons/TwitterLoginButton";
+import facebook from "../facebook.png";
+import twitter from "../twitter.png";
 
 const Login = ({ username, password }) => {
   return (
     <div className="login-wrapper">
-      {/* <header className="title">Login</header> */}
       <p className="header">Sign in with Github</p>
       <input
         type="text"
@@ -19,13 +22,19 @@ const Login = ({ username, password }) => {
         value={password}
         className="auth-password"
       />
-      <Button children="Continue" classname="continue" />
+      <LoginButton classname="continue">Continue</LoginButton>
       <p className="divider-text">Or sign up through social media</p>
       <div className="login-social-btn">
-        <Button children="Sign in with Facebook" />
+        <FacebookLoginButton>
+          <img src={facebook} alt="facebook" classname="facebook-img" /> Sign in
+          with Facebook
+        </FacebookLoginButton>
       </div>
       <div className="login-social-btn">
-        <Button children="Sign in with Twitter" />
+        <TwitterLoginButton>
+          <img src={twitter} alt="" className="twitter-img" /> Sign in with
+          Twitter
+        </TwitterLoginButton>
       </div>
     </div>
   );
