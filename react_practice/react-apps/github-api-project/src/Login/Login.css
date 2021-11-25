@@ -1,0 +1,59 @@
+.login-wrapper {
+  width: 400px;
+  padding: 20px 0px;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.header {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.auth-username {
+  width: 70%;
+  padding: 8px 3px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.auth-password {
+  width: 70%;
+  padding: 8px 3px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.auth-username:focus {
+  outline: 0 !important;
+}
+
+.auth-password:focus {
+  outline: 0 !important;
+}
+
+.divider-text {
+  width: 70%;
+  font-size: 12px;
+  margin-bottom: 4px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.login-social-btn {
+  padding: 8px 0;
+}
+
+Button:hover {
+  cursor: pointer;
+}

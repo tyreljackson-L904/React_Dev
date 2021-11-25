@@ -1,16 +1,16 @@
 import React from "react";
 import "./FollowerCard.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const FollowerCard = ({ follower, onFollow, onCardClick }) => {
   const handleFollowClick = (e) => {
     e.stopPropagation();
     onFollow(follower);
   };
-
+  console.log(follower);
   return (
     <div className="follower-container">
-      <Link to={`/${follower.login}`} className="follower-card">
+      <NavLink to={`/${follower.login}`} className="follower-card">
         <img
           src={follower.avatar_url}
           alt={follower.login}
@@ -22,7 +22,7 @@ const FollowerCard = ({ follower, onFollow, onCardClick }) => {
         <button className="follow-btn" onClick={handleFollowClick}>
           Follow
         </button>
-      </Link>
+      </NavLink>
     </div>
   );
 };

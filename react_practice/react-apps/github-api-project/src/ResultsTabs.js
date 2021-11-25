@@ -8,8 +8,7 @@ import { Routes, Route, NavLink, useParams } from "react-router-dom";
 const ResultsTabs = ({ searchResult }) => {
   const [followersList, setFollowersList] = useState([]);
   const [selected, setSelected] = useState([]);
-  const [activeTab, setActiveTab] = useState("Home");
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const username = searchResult.login;
   const listItemClassName = "tab-item";
   const { login } = useParams();
@@ -21,39 +20,6 @@ const ResultsTabs = ({ searchResult }) => {
 
   const handleCardClick = (follower) => {
     setSelected(follower);
-  };
-
-  const handleClickTab1 = () => {
-    setActiveTab("Home");
-  };
-
-  const handleClickTab2 = () => {
-    setActiveTab("Followers");
-    getFollowers();
-  };
-
-  const handleClickTab3 = () => {
-    setActiveTab("Following");
-  };
-
-  const handleClickTab4 = () => {
-    setActiveTab("Repos");
-  };
-
-  const getFollowers = async () => {
-    try {
-      const url = `https://api.github.com/users/${login}/followers`;
-      const response = await fetch(url, {
-        headers: {
-          Authorization: `bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-      setFollowersList(data);
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (

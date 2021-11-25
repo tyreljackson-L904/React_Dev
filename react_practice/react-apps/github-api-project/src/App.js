@@ -4,12 +4,14 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Search from "./Search";
 import ResultsTabs from "./ResultsTabs";
-import { useNavigate } from "react-router-dom";
-// const axios = require("axios");
+import NavBar from "./Nav/Navbar";
+import { useNavigate, useParams } from "react-router-dom";
+import Login from "./Login/Login";
 
 function App() {
   const [value, setValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
   // const [isLoading, setIsLoading] = useState(true);
   let navigate = useNavigate();
 
@@ -21,18 +23,28 @@ function App() {
     navigate(`/${value}`);
   };
 
-  return (
-    <div className="App">
-      <Header />
-      <Search value={value} onChange={handleChange} onClick={getUserData} />
-      <Routes>
-        <Route
-          path="/:login/*"
-          element={<ResultsTabs searchResult={searchResult} />}
-        />
-      </Routes>
-    </div>
-  );
+  if (!loggedIn) {
+    return (
+      <div className="App">
+        <NavBar />
+        <Login />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <NavBar />
+        <Header />
+        <Search value={value} onChange={handleChange} onClick={getUserData} />
+        <Routes>
+          <Route
+            path="/:login/*"
+            element={<ResultsTabs searchResult={searchResult} />}
+          />
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
