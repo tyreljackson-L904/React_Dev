@@ -5,8 +5,9 @@ import Header from "./Header";
 import Search from "./Search";
 import ResultsTabs from "./ResultsTabs";
 import NavBar from "./Nav/Navbar";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Login from "./Login/Login";
+import octocat from "./Octocat.png";
 
 function App() {
   const [value, setValue] = useState("");
@@ -26,11 +27,19 @@ function App() {
   if (!loggedIn) {
     return (
       <div className="App">
+        <img
+          src={octocat}
+          alt=""
+          className="octocat"
+          width="250px"
+          height="200px"
+        />
         <NavBar />
         <Login />
       </div>
     );
-  } else {
+  } else if (localStorage.getItem("login")) {
+    setLoggedIn(true);
     return (
       <div className="App">
         <NavBar />

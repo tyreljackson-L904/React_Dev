@@ -9,7 +9,7 @@ const Button = styled.button`
   color: #fff;
   background: linear-gradient(45deg, #8e2de2, #4a00e0);
   width: 70%;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 export const LoginButton = ({ children, className }) => {
