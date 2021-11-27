@@ -3,17 +3,10 @@ import FollowerCard from "../FollowerCard";
 import "./Followers.css";
 import { useParams } from "react-router-dom";
 
-const Followers = ({ title, onClick, onCardClick }) => {
-  const [selectedProfile, setSelectedProfile] = useState("");
+const Followers = ({ title, onClick }) => {
   const [newProfile, setNewProfile] = useState([]);
   const [followers, setFollowers] = useState([]);
   const { login } = useParams();
-
-  // const handleFollowClick = (follower) => {
-  //   console.log(follower);
-  //   setSelectedProfile(follower);
-  //   getFollowerCard(selectedProfile);
-  // };
 
   useEffect(() => {
     const getFollowers = async () => {
@@ -36,7 +29,6 @@ const Followers = ({ title, onClick, onCardClick }) => {
   }, [login]);
 
   const getFollowerCard = async () => {
-    const login = selectedProfile.login;
     try {
       const url = `https://api.github.com/users/${login}`;
       const response = await fetch(url, {
@@ -55,16 +47,13 @@ const Followers = ({ title, onClick, onCardClick }) => {
 
   return (
     <div className="followers-container">
-      <div className="title" onClick={onClick}>
-        {title}
-      </div>
       <div className="main-content">
-        {followers.map((follower, index) => {
+        {followers.map((user, index) => {
           return (
             <ul className="follower-list">
               <FollowerCard
                 key={index}
-                follower={follower}
+                user={user}
                 onCardClick={getFollowerCard}
               />
             </ul>

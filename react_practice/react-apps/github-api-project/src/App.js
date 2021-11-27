@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Login from "./Login/Login";
 import octocat from "./Octocat.png";
 
-function App() {
+const App = () => {
   const [value, setValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -24,36 +24,36 @@ function App() {
     navigate(`/${value}`);
   };
 
-  if (!loggedIn) {
-    return (
-      <div className="App">
-        <img
-          src={octocat}
-          alt=""
-          className="octocat"
-          width="250px"
-          height="200px"
+  // if (localStorage.getItem("login")) {
+  //   setLoggedIn(true);
+  return (
+    <div className="App">
+      <NavBar />
+      <Header />
+      <Search value={value} onChange={handleChange} onClick={getUserData} />
+      <Routes>
+        <Route
+          path="/:login/*"
+          element={<ResultsTabs searchResult={searchResult} />}
         />
-        <NavBar />
-        <Login />
-      </div>
-    );
-  } else if (localStorage.getItem("login")) {
-    setLoggedIn(true);
-    return (
-      <div className="App">
-        <NavBar />
-        <Header />
-        <Search value={value} onChange={handleChange} onClick={getUserData} />
-        <Routes>
-          <Route
-            path="/:login/*"
-            element={<ResultsTabs searchResult={searchResult} />}
-          />
-        </Routes>
-      </div>
-    );
-  }
-}
+      </Routes>
+    </div>
+  );
+  // } else if (loggedIn) {
+  // return (
+  //   <div className="App">
+  //     <img
+  //       src={octocat}
+  //       alt=""
+  //       className="octocat"
+  //       width="250px"
+  //       height="200px"
+  //     />
+  //     <NavBar />
+  //     <Login />
+  //   </div>
+  // );
+  //   }
+};
 
 export default App;

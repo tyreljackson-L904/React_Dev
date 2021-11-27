@@ -2,7 +2,7 @@ import React from "react";
 import "./FollowerCard.css";
 import { NavLink } from "react-router-dom";
 
-const FollowerCard = ({ user, onFollow }) => {
+const FollowingCard = ({ user, onFollow }) => {
   const handleFollowClick = (e) => {
     e.stopPropagation();
     onFollow(user);
@@ -27,4 +27,4 @@ const FollowerCard = ({ user, onFollow }) => {
   );
 };
 
-export default FollowerCard;
+export default FollowingCard;

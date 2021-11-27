@@ -9,4 +9,9 @@
 .header {
   font-size: 50px;
   margin: 0;
+  color: #fff;
+}
+
+.sub-header {
+  color: #fff;
 }

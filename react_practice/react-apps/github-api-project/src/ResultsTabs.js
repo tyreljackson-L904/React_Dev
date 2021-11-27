@@ -3,16 +3,13 @@ import Home from "./ResultsTabs/Home";
 import Followers from "./ResultsTabs/Followers";
 import Repositories from "./ResultsTabs/Repositories";
 import "./ResultsTabs.css";
-import { Routes, Route, NavLink, useParams } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
+import Following from "./ResultsTabs/Following";
 
 const ResultsTabs = ({ searchResult }) => {
-  const [followersList, setFollowersList] = useState([]);
   const [selected, setSelected] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
-  const username = searchResult.login;
   const listItemClassName = "tab-item";
-  const { login } = useParams();
-  console.log(login);
 
   const activeClassname = ({ isActive }) => {
     return isActive ? "active" : listItemClassName;
@@ -30,7 +27,6 @@ const ResultsTabs = ({ searchResult }) => {
             end
             to={{
               pathname: ".",
-              state: searchResult,
             }}
             className={activeClassname}
           >
@@ -40,7 +36,6 @@ const ResultsTabs = ({ searchResult }) => {
           <NavLink
             to={{
               pathname: "followers",
-              state: followersList,
             }}
             className={activeClassname}
           >
@@ -49,8 +44,7 @@ const ResultsTabs = ({ searchResult }) => {
 
           <NavLink
             to={{
-              pathname: `/${username}/following`,
-              state: searchResult.following,
+              pathname: "following",
             }}
             className={activeClassname}
           >
@@ -60,7 +54,6 @@ const ResultsTabs = ({ searchResult }) => {
           <NavLink
             to={{
               pathname: "repositories",
-              state: searchResult.public_repos,
             }}
             className={activeClassname}
           >
@@ -69,17 +62,9 @@ const ResultsTabs = ({ searchResult }) => {
         </ul>
         <div className="current-tab">
           <Routes>
-            <Route index element={<Home selected={selected} />} />
-            <Route
-              path="followers"
-              element={
-                <Followers
-                  followersList={followersList}
-                  onCardClick={handleCardClick}
-                />
-              }
-            />
-            <Route path="following" element={<div />} />
+            <Route index element={<Home />} />
+            <Route path="followers" element={<Followers />} />
+            <Route path="following" element={<Following />} />
             <Route path="repositories" element={<Repositories />} />
           </Routes>
         </div>
