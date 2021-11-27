@@ -1,22 +1,16 @@
-import React, { useState } from "react";
-import Home from "./ResultsTabs/Home";
-import Followers from "./ResultsTabs/Followers";
-import Repositories from "./ResultsTabs/Repositories";
-import "./ResultsTabs.css";
+import React from "react";
+import Home from "../components/Home";
+import Followers from "../components/Followers";
+import Repositories from "./Repositories";
+import "../styles/ResultsTabs.css";
 import { Routes, Route, NavLink } from "react-router-dom";
-import Following from "./ResultsTabs/Following";
+import Following from "../components/Following";
 
-const ResultsTabs = ({ searchResult }) => {
-  const [selected, setSelected] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+const ResultsTabs = () => {
   const listItemClassName = "tab-item";
 
   const activeClassname = ({ isActive }) => {
     return isActive ? "active" : listItemClassName;
-  };
-
-  const handleCardClick = (follower) => {
-    setSelected(follower);
   };
 
   return (

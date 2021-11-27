@@ -1,11 +1,11 @@
 import React from "react";
-import "./Navbar.css";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
     <div className="nav-wrapper">
       <div>
-        <h3 className="nav-title">Github Api Interface</h3>
+        <h3 className="nav-title">Github API Interface</h3>
       </div>
     </div>
   );

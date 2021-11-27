@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import UserCard from "../UserCard";
+import UserCard from "../components/UserCard";
 import { useParams } from "react-router-dom";
 
 const Home = () => {
@@ -18,7 +18,6 @@ const Home = () => {
         const data = await response.json();
 
         setUser(data);
-        // setIsLoading(false);
       } catch (err) {
         console.error(err);
       }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./FollowerCard.css";
+import "../styles/FollowerCard.css";
 import { NavLink } from "react-router-dom";
 
 const FollowingCard = ({ user, onFollow }) => {

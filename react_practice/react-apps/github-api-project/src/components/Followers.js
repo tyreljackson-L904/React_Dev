@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import FollowerCard from "../FollowerCard";
-import "./Followers.css";
+import FollowerCard from "./FollowerCard";
+import "../styles/Followers.css";
 import { useParams } from "react-router-dom";
 
-const Followers = ({ title, onClick }) => {
+const Followers = () => {
   const [newProfile, setNewProfile] = useState([]);
   const [followers, setFollowers] = useState([]);
   const { login } = useParams();
@@ -20,7 +20,6 @@ const Followers = ({ title, onClick }) => {
         const data = await response.json();
 
         setFollowers(data);
-        // setIsLoading(false);
       } catch (err) {
         console.error(err);
       }

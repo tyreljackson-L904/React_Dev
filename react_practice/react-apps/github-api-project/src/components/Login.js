@@ -1,25 +1,13 @@
 import React from "react";
-import "./Login.css";
+import "../styles/Login.css";
 import GithubLoginButton from "../Buttons/GithubLoginButton";
 import { FacebookLoginButton } from "../Buttons/FacebookLoginButton";
 import { TwitterLoginButton } from "../Buttons/TwitterLoginButton";
 
-const Login = ({ onClick }) => {
+const Login = () => {
   return (
     <div className="login-wrapper">
       <p className="header">Sign in with Github</p>
-      {/* <input
-        type="text"
-        placeholder="Enter your Username"
-        value={username}
-        className="auth-username"
-      />
-      <input
-        type="text"
-        placeholder="Enter your Password"
-        value={password}
-        className="auth-password"
-      /> */}
       <GithubLoginButton classname="continue">
         Login with Github
       </GithubLoginButton>

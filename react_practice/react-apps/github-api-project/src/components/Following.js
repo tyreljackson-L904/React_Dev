@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import FollowingCard from "../FollowingCard";
+import FollowingCard from "../components/FollowingCard";
 
-const Following = ({ title }) => {
+const Following = () => {
   const [followingList, setFollowingList] = useState([]);
   const { login } = useParams();
 
@@ -16,7 +16,6 @@ const Following = ({ title }) => {
           },
         });
         const data = await response.json();
-        console.log(data);
         setFollowingList(data);
       } catch (err) {
         console.error(err);
