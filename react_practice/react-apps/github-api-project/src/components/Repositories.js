@@ -1,12 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import RepoCard from "./RepoCard";
 
-const Repositories = ({title, onClick}) => {
-    return (
-        <div className='repo-container'>
-            <div className="title" onClick={onClick}>{title}</div>
-            <div className="main-content"><p>Repositories</p></div>
-        </div>
-    )
-}
+const Repos = () => {
+  const { login } = useParams();
+  const [repoList, setRepoList] = useState([]);
 
-export default Repositories
+  useEffect(() => {
+    const getUserRepos = async () => {
+      try {
+        const url = `https://api.github.com/users/${login}/repos`;
+        const response = await fetch(url, {
+          headers: {
+            Authorization: `bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+          },
+        });
+        const data = await response.json();
+
+        setRepoList(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getUserRepos();
+  }, [login]);
+
+  return (
+    <div className="repo-container">
+      <div className="main-content">
+        <ul className="repo-list">
+          {repoList.map((repo, index) => {
+            return <RepoCard repo={repo} key={index} />;
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Repos;

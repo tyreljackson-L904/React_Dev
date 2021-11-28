@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "../components/Home";
 import Followers from "../components/Followers";
-import Repositories from "./Repositories";
+import Repos from "./Repositories";
 import "../styles/ResultsTabs.css";
 import { Routes, Route, NavLink } from "react-router-dom";
 import Following from "../components/Following";
@@ -59,7 +59,7 @@ const ResultsTabs = () => {
             <Route index element={<Home />} />
             <Route path="followers" element={<Followers />} />
             <Route path="following" element={<Following />} />
-            <Route path="repositories" element={<Repositories />} />
+            <Route path="repositories" element={<Repos />} />
           </Routes>
         </div>
       </div>
