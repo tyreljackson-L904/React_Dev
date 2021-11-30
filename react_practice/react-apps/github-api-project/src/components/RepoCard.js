@@ -1,10 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/RepoCard.css";
 
 const RepoCard = ({ repo }) => {
   console.log(repo);
+  console.log(repo.html_url);
 
-  const handleViewClick = () => {};
+  const handleViewClick = () => {
+    window.location.href = repo.html_url;
+  };
 
   const handleClick = () => {};
   return (
@@ -15,9 +19,9 @@ const RepoCard = ({ repo }) => {
         <h5 className="last-updated">{repo.updated_at}</h5>
         <h5 className="language">{repo.language}</h5>
         <p className="description">{repo.description}</p>
-        <div className="btn" onClick={handleViewClick}>
+        <NavLink to="/" className="btn" onClick={handleViewClick}>
           <button className="view-btn">View</button>
-        </div>
+        </NavLink>
       </div>
     </div>
   );
