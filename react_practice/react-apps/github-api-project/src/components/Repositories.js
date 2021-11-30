@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RepoCard from "./RepoCard";
+import "../styles/Repositories.css";
 
 const Repos = () => {
   const { login } = useParams();

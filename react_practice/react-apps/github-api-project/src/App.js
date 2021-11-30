@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles/App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useMatch } from "react-router-dom";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import ResultsTabs from "./components/ResultsTabs";
