@@ -8,7 +8,8 @@ import NavBar from "./components/Navbar";
 import { useNavigate } from "react-router-dom";
 
 const App = () => {
-  const [value, setValue] = useState("");
+  const match = useMatch("/:login/*");
+  const [value, setValue] = useState(match?.params.login || "");
   let navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -18,6 +19,8 @@ const App = () => {
   const getUserData = () => {
     navigate(`/${value}`);
   };
+
+  console.log(match);
 
   return (
     <div className="App">
