@@ -24,7 +24,7 @@ const App = () => {
 
   console.log(match);
 
-  if (!loggedIn) {
+  if (loggedIn) {
     return <Login />;
   } else {
     return (
