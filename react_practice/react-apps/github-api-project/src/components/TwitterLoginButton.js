@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import twitter from "../twitter.png";
+import twitter from "../images/twitter.png";
 
 const Button = styled.button`
   border: none;

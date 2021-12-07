@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import facebook from "../facebook.png";
+import facebook from "../images/facebook.png";
 
 const Button = styled.button`
   border: none;

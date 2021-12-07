@@ -1,14 +1,35 @@
-.login-wrapper {
-  width: 400px;
-  padding: 20px 0px;
-  justify-content: center;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 8px;
-  margin: auto;
-  margin-top: 5em;
+.login-container {
+  width: 100%;
 }
 
+.login-wrapper {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 30vh auto 0;
+}
+
+img {
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: black;
+  margin-top: 0;
+}
+
+.login-btn {
+  margin: 10px auto;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+}
+/* 
 .header {
   margin-bottom: 40px;
   font-weight: 700;
@@ -63,8 +84,4 @@
 img .facebook-img {
   height: 30px;
   width: 30px;
-}
-
-Button:hover {
-  cursor: pointer;
-}
+} */

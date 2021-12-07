@@ -1,7 +1,13 @@
 import React from "react";
 import "../styles/UserCard.css";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, onFollow }) => {
+  const handleFollowClick = (e) => {
+    e.stopPropagation();
+    // onFollow(user);
+    const repoTab = window.open(user.html_url);
+    repoTab.focus();
+  };
   return (
     <div className="card-container">
       <div className="card">
@@ -10,6 +16,9 @@ const UserCard = ({ user }) => {
         </div>
         <h2 className="name">{user.name}</h2>
         <h3 className="username">{user.login}</h3>
+        <button to="/" className="follow-btn" onClick={handleFollowClick}>
+          Follow
+        </button>
         <div className="description">
           <p>{user.bio}</p>
         </div>
