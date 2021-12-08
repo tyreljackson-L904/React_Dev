@@ -6,7 +6,7 @@
 }
 
 .follower-card {
-  width: 30%;
+  width: 35%;
   display: flex;
   background-color: #333;
   padding: 10px;
@@ -38,4 +38,5 @@ img {
   border-radius: 10px;
   background-color: rgb(84, 84, 84);
   padding: 10px 10px;
+  width: 150px;
 }

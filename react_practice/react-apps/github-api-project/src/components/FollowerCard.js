@@ -21,11 +21,13 @@ const FollowerCard = ({ user }) => {
   return (
     <div className="follower-container">
       <NavLink to={`/${user.login}`} className="follower-card">
-        <img
-          src={user.avatar_url}
-          alt={user.login}
-          className="follower-avatar"
-        />
+        <div className="border-gradient">
+          <img
+            src={user.avatar_url}
+            alt={user.login}
+            className="follower-avatar"
+          />
+        </div>
         <div>
           <h4 className="follower-username">{user.login}</h4>
           <h4 className="follower-count">Followers: {followerCount}</h4>
