@@ -1,7 +1,13 @@
 import React from "react";
 import "../styles/Search.css";
 
-const Search = ({ onChange, onClick, value }) => {
+interface SearchProps {
+  value: string;
+  onChange: (event: React.ChangeEvent) => void;
+  onClick: (event: React.MouseEvent) => void;
+}
+
+const Search = ({ onChange, onClick, value }: SearchProps) => {
   return (
     <div className="search-container">
       <input

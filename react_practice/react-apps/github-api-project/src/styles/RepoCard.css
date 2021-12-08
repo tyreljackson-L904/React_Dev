@@ -9,7 +9,7 @@
 .repo-card {
   display: grid;
   width: 80%;
-  grid-template-columns: 3fr 1fr 2fr 2fr 3fr 1fr;
+  grid-template-columns: 3fr 2fr 2fr 3fr 1fr;
   grid-column-gap: 10px;
   color: #fff;
   margin: 20px 0;

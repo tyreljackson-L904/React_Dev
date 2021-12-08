@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const FollowerCard = ({ user }) => {
   const [followerCount, setFollowerCount] = useState(null);
+
   useEffect(() => {
     const getFollowerCount = async () => {
       const url = `https://api.github.com/users/${user.login}`;

@@ -7,7 +7,7 @@ import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAMLRiMB78reBUYhEzhvVpjFgpQdbe2nUM",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "github-api-interface.firebaseapp.com",
   projectId: "github-api-interface",
   storageBucket: "github-api-interface.appspot.com",

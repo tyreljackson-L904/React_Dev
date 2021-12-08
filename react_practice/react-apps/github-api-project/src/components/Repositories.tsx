@@ -29,6 +29,15 @@ const Repos = () => {
   return (
     <div className="repo-container">
       <div className="main-content">
+        <table className="repo-header">
+          <tr>
+            <th className="header-item">Name</th>
+            <th className="header-item">Last Updated</th>
+            <th className="header-item">Language</th>
+            <th className="header-item">Description</th>
+            <th className="header-item">Profile</th>
+          </tr>
+        </table>
         <ul className="repo-list">
           {repoList.map((repo, index) => {
             return <RepoCard repo={repo} key={index} />;
