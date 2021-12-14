@@ -1,26 +1,28 @@
 import React, { useState } from "react";
-import InfoPopUp from "./InfoPopUp";
+// import InfoPopUp from "./InfoPopUp";
 import { SocialIcon } from "react-social-icons";
 
 function Header() {
-  const [popUp, setPopUp] = useState(false);
+  // const [popUp, setPopUp] = useState(false);
 
-  const showPopUp = () => {
-    setPopUp(!popUp);
-  };
+  // const showPopUp = () => {
+  //   setPopUp(!popUp);
+  // };
 
   return (
     <div className="cta-header">
       <h2 className="cta-tagline">
-        <span className="hover-definition" onClick={showPopUp}>
+        <span className="hover-definition">
           Search.
-          {popUp && <InfoPopUp />}
+          {/* {popUp && <InfoPopUp />} */}
         </span>{" "}
-        <span className="hover-definition" onClick={showPopUp}>
-          Shop. {popUp && <InfoPopUp />}
+        <span className="hover-definition">
+          Shop.
+          {/* {popUp && <InfoPopUp />} */}
         </span>{" "}
-        <span className="hover-definition" onClick={showPopUp}>
-          Save. {popUp && <InfoPopUp />}
+        <span className="hover-definition">
+          Save.
+          {/* {popUp && <InfoPopUp />} */}
         </span>{" "}
         <br /> with <span className="creators-color">Creators</span>
       </h2>

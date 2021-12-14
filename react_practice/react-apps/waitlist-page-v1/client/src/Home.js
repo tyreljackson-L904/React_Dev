@@ -2,7 +2,7 @@
 import "./Home.css";
 import Header from "./Header";
 import CTAForm from "./CTAForm";
-// import Card from "./Card";
+import Card from "./Card";
 
 function Home() {
   return (

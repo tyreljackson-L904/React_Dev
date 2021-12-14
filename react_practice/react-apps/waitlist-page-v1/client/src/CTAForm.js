@@ -12,6 +12,7 @@ function CTAForm() {
   const handleSubmit = (e) => {
     alert("you clicked submit " + value);
     e.preventDefault();
+    setValue(e.target.value);
   };
 
   return (
