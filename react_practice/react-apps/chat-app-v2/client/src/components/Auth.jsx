@@ -4,6 +4,8 @@ import axios from "axios";
 
 import signinImage from "../assets/signup.jpg";
 
+const cookies = new Cookies();
+
 const initialState = {
   fullName: "",
   username: "",
@@ -21,9 +23,22 @@ const Auth = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+
+    const { fullName, username, password, phoneNumber, avatarURL } = form;
+
+    const URL = "http://localhost:3001/auth";
+
+    const {
+      data: { token, userId, hashedPassword },
+    } = await axios.post(`${URL}/${isSignUp ? "signup" : "login"} `, {
+      username,
+      password,
+      fullName,
+      phoneNumber,
+      avatarURL,
+    }); // data passed to back end from front end
   };
 
   const switchMode = () => {
@@ -35,7 +50,7 @@ const Auth = () => {
       <div className="auth__form-container_fields">
         <div className="auth__form-container_fields-content">
           <p>{isSignUp ? "Sign Up" : "Sign In"}</p>
-          <form onSubmit={handleSubmit} action="Submit">
+          <form onSubmit={handleSubmit} action="http://localhost:3001/login">
             {isSignUp && (
               <div className="auth__form-container_fields-content_input">
                 <label htmlFor="fullName">Full Name</label>
