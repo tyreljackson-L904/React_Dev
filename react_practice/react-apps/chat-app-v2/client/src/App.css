@@ -153,6 +153,7 @@ body {
   color: #05245a;
   cursor: pointer;
   font-weight: 700;
+  padding-left: 5px;
 }
 
 @media screen and (max-width: 800px) {
