@@ -20,10 +20,9 @@ if (authToken) {
     name: cookies.get("username"),
     fullName: cookies.get("fullName"),
     image: cookies.get("avatarURL"),
-    token: cookies.get("token"),
     hashedPassword: cookies.get("hashedPassword"),
     phoneNumber: cookies.get("phoneNumber"),
-  })
+  }, authToken)
 }
 
 const App = () => {

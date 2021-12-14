@@ -26,16 +26,16 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { fullName, username, password, phoneNumber, avatarURL } = form;
+    const { username, password, phoneNumber, avatarURL } = form;
 
-    const URL = "http://localhost:3001/auth";
+    const URL = "http://localhost:5001/auth";
 
     const {
-      data: { token, userId, hashedPassword },
+      data: { token, userId, hashedPassword, fullName }
     } = await axios.post(`${URL}/${isSignUp ? "signup" : "login"} `, {
       username,
       password,
-      fullName,
+      fullName: form.fullName,
       phoneNumber,
       avatarURL,
     }); // data passed to back end from front end
@@ -63,7 +63,7 @@ const Auth = () => {
       <div className="auth__form-container_fields">
         <div className="auth__form-container_fields-content">
           <p>{isSignUp ? "Sign Up" : "Sign In"}</p>
-          <form onSubmit={handleSubmit} action="http://localhost:3001/login">
+          <form onSubmit={handleSubmit}>
             {isSignUp && (
               <div className="auth__form-container_fields-content_input">
                 <label htmlFor="fullName">Full Name</label>
