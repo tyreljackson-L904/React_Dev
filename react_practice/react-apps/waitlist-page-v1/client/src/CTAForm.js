@@ -2,28 +2,37 @@ import React, { useState } from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import "./CTAForm.css";
 
+import axios from "axios";
+
 const initialState = {
   fullName: "",
   email: "",
 };
 
 function CTAForm() {
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState("");
   const [form, setForm] = useState(initialState);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.value]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
+    console.log(form);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(form);
+    try {
+      // const { fullName, email } = form;
 
-    const { fullName, email } = form;
-    // setValue(e.target.value);
-
-    // const submitEmail = async () => {
-    //   const URL = 'localhost:5002/'
-    // }
+      const response = await axios.post("http://localhost:5002/record/add", {
+        fullName: form.fullName,
+        email: form.email,
+      });
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+    setForm(initialState);
   };
 
   return (
@@ -36,18 +45,27 @@ function CTAForm() {
           away
         </h2>
         <div className="cta-form__input-fields">
+          <label htmlFor="fullName" className="cta-form__input-fields__label">
+            Full Name
+          </label>
           <input
+            name="fullName"
             type="text"
             size="37"
-            placeholder="Full Name"
-            value={value}
+            placeholder="Name"
+            // value={value}
             onChange={handleChange}
+            required
           />
+          <label htmlFor="email" className="cta-form__input-fields__label">
+            Email Address
+          </label>
           <input
+            name="email"
             type="text"
             size="37"
-            placeholder="Email Address"
-            value={value}
+            placeholder="Email"
+            // value={value}
             onChange={handleChange}
             required
           />

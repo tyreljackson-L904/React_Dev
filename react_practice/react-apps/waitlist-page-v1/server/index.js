@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const emailRoute = require('./routes/email-list.js')
+const emailRoute = require('./routes/record.js')
 
 const app = express();
 
@@ -12,8 +12,8 @@ require('dotenv').config()
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use('./routes/email-list', emailRoute);
+app.use(require('./routes/record'))
+// app.use('/record', emailRoute);
 
 const dbo = require('./db/conn');
 

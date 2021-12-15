@@ -1,9 +1,9 @@
-const express = require('express');
+// const express = require('express');
 
-const {emailRoute} = require('../db/conn')
+// const {emailRoute} = require('../db/conn')
 
-const router = express.Router();
+// const router = express.Router();
 
-router.post('/email-list')
+// router.post('/email-list', emailRoute)
 
-module.exports = router;
+// module.exports = router;
