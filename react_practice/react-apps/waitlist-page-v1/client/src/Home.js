@@ -1,8 +1,6 @@
-// import React, { useState } from "react";
 import "./Home.css";
 import Header from "./Header";
 import CTAForm from "./CTAForm";
-import Card from "./Card";
 
 function Home() {
   return (
@@ -19,9 +17,6 @@ function Home() {
             <CTAForm />
           </div>
         </div>
-        {/* <h1 className="card-header">As Easy As...</h1> */}
-        {/* <Card /> */}
-        {/* <Footer /> */}
       </div>
     </div>
   );

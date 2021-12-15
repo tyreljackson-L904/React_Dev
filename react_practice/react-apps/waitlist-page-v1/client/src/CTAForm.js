@@ -10,10 +10,18 @@ const initialState = {
 };
 
 function CTAForm() {
-  // const [value, setValue] = useState("");
   const [form, setForm] = useState(initialState);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleChange = (e) => {
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+    setForm({ ...form, [e.target.name]: e.target.value });
+    console.log(form);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
     setForm({ ...form, [e.target.name]: e.target.value });
     console.log(form);
   };
@@ -22,8 +30,6 @@ function CTAForm() {
     e.preventDefault();
     console.log(form);
     try {
-      // const { fullName, email } = form;
-
       const response = await axios.post("http://localhost:5002/record/add", {
         fullName: form.fullName,
         email: form.email,
@@ -33,6 +39,8 @@ function CTAForm() {
       console.log(err);
     }
     setForm(initialState);
+    setName("");
+    setEmail("");
   };
 
   return (
@@ -53,8 +61,8 @@ function CTAForm() {
             type="text"
             size="37"
             placeholder="Name"
-            // value={value}
-            onChange={handleChange}
+            onChange={handleNameChange}
+            value={name}
             required
           />
           <label htmlFor="email" className="cta-form__input-fields__label">
@@ -65,8 +73,8 @@ function CTAForm() {
             type="text"
             size="37"
             placeholder="Email"
-            // value={value}
-            onChange={handleChange}
+            onChange={handleEmailChange}
+            value={email}
             required
           />
         </div>

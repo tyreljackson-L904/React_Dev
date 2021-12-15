@@ -15,7 +15,6 @@ function Card() {
   return (
     <div className="card-container">
       <div className="card">
-        {/* <h1 className="title">1</h1> */}
         <FaSearchDollar size={"70"} />
         <h3 className="search-card">Search</h3>
         <h4 className="search-description">
@@ -27,7 +26,6 @@ function Card() {
         </button>
       </div>
       <div className="card">
-        {/* <h1 className="title">2</h1> */}
         <GiShoppingBag size={"70"} />
         <h3 className="shop-card">Shop</h3>
         <h4 className="shop-description">
@@ -39,7 +37,6 @@ function Card() {
         </button>
       </div>
       <div className="card">
-        {/* <h1 className="title">3</h1> */}
         <GiReceiveMoney size={"70"} />
         <h3 className="save-card">Save</h3>
         <h4 className="save-description">
