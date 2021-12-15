@@ -25,7 +25,12 @@
   color: #fff;
 }
 
-.cta-form-email {
+.cta-form__input-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-form__input-fields input {
   max-width: 50%;
   padding: 2% 10% 2% 2%;
   margin-top: 10%;

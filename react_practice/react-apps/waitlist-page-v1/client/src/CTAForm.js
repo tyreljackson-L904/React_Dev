@@ -2,17 +2,28 @@ import React, { useState } from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import "./CTAForm.css";
 
+const initialState = {
+  fullName: "",
+  email: "",
+};
+
 function CTAForm() {
   const [value, setValue] = useState("");
+  const [form, setForm] = useState(initialState);
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    setForm({ ...form, [e.target.value]: e.target.value });
   };
 
   const handleSubmit = (e) => {
-    alert("you clicked submit " + value);
     e.preventDefault();
-    setValue(e.target.value);
+
+    const { fullName, email } = form;
+    // setValue(e.target.value);
+
+    // const submitEmail = async () => {
+    //   const URL = 'localhost:5002/'
+    // }
   };
 
   return (
@@ -24,15 +35,23 @@ function CTAForm() {
           The best creator <span>discounts</span> will only be a simple search
           away
         </h2>
-        <input
-          type="text"
-          size="37"
-          placeholder="Email Address"
-          className="cta-form-email"
-          value={value}
-          onChange={handleChange}
-          required
-        />
+        <div className="cta-form__input-fields">
+          <input
+            type="text"
+            size="37"
+            placeholder="Full Name"
+            value={value}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            size="37"
+            placeholder="Email Address"
+            value={value}
+            onChange={handleChange}
+            required
+          />
+        </div>
         <PrimaryBtn
           title="Join the waitlist"
           className="cta-form-btn"
