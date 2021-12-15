@@ -7,12 +7,12 @@ import HomeSearchBar from "./components/HomeSearchBar";
 import Card from "./components/Card";
 import { data } from "./MockData.js";
 
-function Home() {
+function Home({ values }) {
   return (
     <div className="main-container">
-      <div className="left-content">
+      {/* <div className="left-content">
         <ShoppingMenu />
-      </div>
+      </div> */}
       <div className="right-content">
         <HomeBanner />
         <div className="search-filter-content">
@@ -20,10 +20,11 @@ function Home() {
           <FilterResults />
         </div>
         <div className="search-results">
-          {data.map((creator) => {
+          {/* <button>Click Me</button> */}
+          {data.map((creator, index) => {
             return (
               <ul className="search-list">
-                <li className="list-item" key={creator.id}>
+                <li className="list-item" key={index}>
                   <Card
                     avatar={creator.avatar}
                     fName={creator.first_name}

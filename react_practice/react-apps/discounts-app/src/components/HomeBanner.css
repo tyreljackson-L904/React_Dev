@@ -1,0 +1,11 @@
+.cta {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-evenly;
+}
+
+.cta-new-line {
+  display: flex;
+  min-width: 100%;
+  justify-content: center;
+}
