@@ -1,6 +1,10 @@
 import React from "react";
 import "../styles/UserCard.css";
 
+type toLink = {
+  to: String;
+};
+
 interface UserType {
   html_url: string;
   avatar_url: string;
@@ -14,7 +18,7 @@ interface UserType {
 
 interface UserProps {
   user: UserType;
-  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+  // onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 const UserCard: React.FC<UserProps> = ({ user }: UserProps) => {
@@ -22,7 +26,7 @@ const UserCard: React.FC<UserProps> = ({ user }: UserProps) => {
     e.stopPropagation();
     // onFollow(user);
     const repoTab = window.open(user.html_url);
-    repoTab.focus();
+    repoTab!.focus();
   };
   return (
     <div className="card-container">
