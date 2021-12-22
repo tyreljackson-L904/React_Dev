@@ -1,10 +1,6 @@
 import React from "react";
 import "../styles/UserCard.css";
 
-type toLink = {
-  to: String;
-};
-
 interface UserType {
   html_url: string;
   avatar_url: string;
@@ -36,9 +32,9 @@ const UserCard: React.FC<UserProps> = ({ user }: UserProps) => {
         </div>
         <h2 className="name">{user.name}</h2>
         <h3 className="username">{user.login}</h3>
-        <button to="/" className="follow-btn" onClick={handleFollowClick}>
+        {/* <button to="/" className="follow-btn" onClick={handleFollowClick}>
           Follow
-        </button>
+        </button> */}
         <div className="description">
           <p>{user.bio}</p>
         </div>

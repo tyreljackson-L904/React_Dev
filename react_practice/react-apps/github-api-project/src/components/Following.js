@@ -17,6 +17,7 @@ const Following = () => {
         });
         const data = await response.json();
         setFollowingList(data);
+        console.log(followingList);
       } catch (err) {
         console.error(err);
       }
