@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useState } from "react";
+import { Router, Routes, Route } from "react-router-dom";
+import Search from "./Search";
 
 const App = () => {
-    return (
-        <div>
-            Hello
-        </div>
-    )
-}
+  const [query, setQuery] = useState("");
 
-export default App
+  const handleClick = () => {};
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  return (
+    <div className="main">
+      <div className="main-header">ProCode</div>
+      <div className="main-content">
+        <div className="main__center-container">
+          <Search value={query} onClick={handleClick} onChange={handleChange} />
+          {/* {BANNER} */}
+          <div className="main__center-container__content">
+            {/* {MAIN CONTENT/FILTERED RESULTS} */}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
