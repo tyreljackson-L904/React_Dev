@@ -1,0 +1,22 @@
+.landing-page__container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 25%;
+  left: 37%;
+  width: 400px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.landing-page__telegram-image {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.landing-page__headline {
+  text-align: center;
+}
+
+.landing-page__continue-btn {
+  width: ;
+}
