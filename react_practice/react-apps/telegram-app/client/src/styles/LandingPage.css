@@ -4,7 +4,7 @@
   position: fixed;
   top: 25%;
   left: 37%;
-  width: 400px;
+  max-width: 400px;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -17,6 +17,7 @@
   text-align: center;
 }
 
-.landing-page__continue-btn {
-  width: ;
+.landing-page__subheader {
+  text-align: center;
+  color: #333;
 }

@@ -1,12 +1,13 @@
 .button-lg {
-  width: 200px;
+  max-width: 200px;
   color: #fff;
-  padding: 15px 0;
+  padding: 15px 18px;
   border-radius: 8px;
-  background-color: #0088cc;
+  background-color: #4995be;
   font-weight: bold;
   font-size: larger;
   text-align: center;
   margin: 0 auto 10px;
   cursor: pointer;
+  text-decoration: none;
 }

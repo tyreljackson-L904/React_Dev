@@ -1,9 +1,16 @@
 import React from "react";
 import "../styles/LandingPage.css";
 import telegramIcon from "../images/pngegg.png";
-import Button from "../reusables/Button";
+import "../styles/Button.css";
+
+import { Link, useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate("home");
+  };
+
   return (
     <div className="landing-page__container">
       <img
@@ -16,7 +23,7 @@ const LandingPage = () => {
       <h4 className="landing-page__subheader">
         View and interact with up to three Telegram channels at once.
       </h4>
-      <Button children="Get Started" />
+      <Link to="home" children="Get Started" className="button-lg"></Link>
     </div>
   );
 };
