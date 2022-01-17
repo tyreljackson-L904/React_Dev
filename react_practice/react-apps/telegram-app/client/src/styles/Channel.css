@@ -1,0 +1,32 @@
+.channel-container {
+  display: flex;
+  background-color: #fff;
+  /* border-radius: 3px; */
+  max-height: 70px;
+  border-bottom: 1px solid gray;
+}
+
+.channel-image {
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.channel-container__right-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.channel-name {
+  margin: 0;
+}
+
+.channel__most-recent__message {
+  margin: 0;
+  font-size: small;
+  color: gray;
+  margin-right: 5px;
+  word-wrap: normal;
+}

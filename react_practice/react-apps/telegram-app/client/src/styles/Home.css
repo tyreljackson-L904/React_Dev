@@ -1,0 +1,13 @@
+.home__main-container {
+  display: flex;
+}
+
+.home__left__channel-list-container {
+  background-color: #4995be;
+  padding: 10px;
+  height: 100vh;
+}
+
+.home__left__channel-list {
+  margin-top: 10px;
+}
