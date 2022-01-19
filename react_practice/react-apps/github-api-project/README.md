@@ -19,6 +19,8 @@ You can then use the side navigation bar to view specific information for those 
 - Axios for API calls
 - Styled Components
 - Custom CSS styling
+- VSCode
+- Git
 
 Building this application taught me alot about persisting data between screens, using React Router API's to grab that data,
 how to effectively work with public API's to get user data and how to effectively display that data in a meaningful way.
