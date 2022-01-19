@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/UserCard.css";
 
-interface UserType {
+type UserType = {
   html_url: string;
   avatar_url: string;
   name: string;
@@ -10,14 +10,13 @@ interface UserType {
   followers: string;
   following: string;
   public_repos: string;
-}
+};
 
-interface UserProps {
+type UserProps = {
   user: UserType;
-  // onClick: (event: React.MouseEvent<HTMLElement>) => void;
-}
+};
 
-const UserCard: React.FC<UserProps> = ({ user }: UserProps) => {
+const UserCard = ({ user }: UserProps) => {
   const handleFollowClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     // onFollow(user);
