@@ -1,6 +1,5 @@
-import React from "react";
+import React, { ReactChildren } from "react";
 import styled from "styled-components";
-import twitter from "../images/twitter.png";
 
 const Button = styled.button`
   border: none;
@@ -12,10 +11,15 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-export const TwitterLoginButton = ({ children, className }) => {
+type LoginProps = {
+  children: ReactChildren;
+  className: string;
+};
+
+export const TwitterLoginButton = ({ children, className }: LoginProps) => {
   return (
     <Button className={className}>
-      <img src={twitter} alt="" className="twitter-img" />
+      <img src="" alt="" className="twitter-img" />
       {children}
     </Button>
   );

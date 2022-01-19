@@ -11,7 +11,12 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-const GithubLoginButton = ({ children, className }) => {
+type LoginProps = {
+  children: string;
+  className: string;
+};
+
+const GithubLoginButton = ({ children, className }: LoginProps) => {
   return (
     <Button className={className} onClick={signInWithGithub}>
       <AiFillGithub />

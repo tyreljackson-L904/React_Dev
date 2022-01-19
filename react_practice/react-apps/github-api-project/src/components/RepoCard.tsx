@@ -1,8 +1,19 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "../styles/RepoCard.css";
 
-const RepoCard = ({ repo }) => {
+type RepoProps = {
+  name: string;
+  updated_at: string;
+  language: string;
+  description: string;
+  html_url: string;
+};
+
+type RepoType = {
+  repo: RepoProps;
+};
+
+const RepoCard = ({ repo }: RepoType) => {
   const handleClick = () => {};
   return (
     <div className="repo-card-container" onClick={handleClick}>

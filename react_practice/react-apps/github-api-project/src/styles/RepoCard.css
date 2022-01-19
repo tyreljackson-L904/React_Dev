@@ -2,8 +2,8 @@
   display: flex;
   width: 100%;
   /* justify-content: center; */
-  margin-left: 50px;
-  padding: 0 20px;
+  /* margin-left: 50px; */
+  padding: 0 140px;
 }
 
 .repo-card {

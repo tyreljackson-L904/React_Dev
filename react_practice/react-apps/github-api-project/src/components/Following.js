@@ -23,7 +23,7 @@ const Following = () => {
       }
     };
     getFollowing();
-  }, [login]);
+  }, [login, followingList]);
 
   const getUserCard = () => {};
 
