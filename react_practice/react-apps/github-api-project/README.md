@@ -6,20 +6,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-I wanted to build a way for people to search for github user profile and get their basic information. 
+I wanted to build a way for people to search for github user profiles and get their basic information. 
 Enter a users name and get their profile photo, basic stats on how many followers they have, how many people
 they are following and how many repos they have. 
 You can then use the side navigation bar to view specific information for those three stats.
 
-This application is built using React, React Hooks, React Router v6 for navigation, params for grabbing and persisting information, 
-React Hooks, RESTful API's, Axios and custom CSS styling.
+## Technologies/Languages/Tools
+- React (functional components)
+- React Router v6
+- TypeScript
+- Firebase & oAuth for user authentication
+- Axios for API calls
+- Styled Components
+- Custom CSS styling
 
 Building this application taught me alot about persisting data between screens, using React Router API's to grab that data,
 how to effectively work with public API's to get user data and how to effectively display that data in a meaningful way.
 
 One of the most useful things I learned was how to utilize React Router useParams to grab data, navigate to pages and
 persist data between renders.
-
 
 ## How to Install and Run
 
