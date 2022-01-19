@@ -5,13 +5,13 @@ import Header from "./Header";
 import PokeGrid from "./PokeGrid";
 import PokemonDetail from "./Pokemondetail";
 
-function App() {
+const App = () => {
   const [pokemons, setPokemons] = useState([]);
   const [selected, setSelected] = useState(null);
   const [page, setPage] = useState(1);
 
   const fetchPokemon = async (page) => {
-    const perPage = 10;
+    const perPage = 8;
     const offset = page * perPage - perPage;
 
     const response = await fetch(
@@ -59,6 +59,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
