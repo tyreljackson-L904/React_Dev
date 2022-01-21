@@ -1,6 +1,6 @@
 .card-container {
   width: 100%;
-  margin-left: 310px;
+  /* margin-left: 310px; */
 }
 
 .card {
@@ -9,13 +9,30 @@
   background-color: #333;
   padding: 15px 0;
   border-radius: 10px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin: 0 20%;
+  }
 }
 
 .circle-avatar img {
-  border: 3px solid #fff;
+  border: 1.5px solid #fff;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+}
+
+.avatar {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .avatar {
+    max-width: 75px;
+    max-height: 75px;
+  }
 }
 
 .name {
@@ -30,6 +47,15 @@
   margin-top: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .name {
+    font-size: 16px;
+  }
+
+  .username {
+    font-size: 12px;
+  }
+}
 .description {
   color: #fff;
   padding: 0 10px 10px;
@@ -53,6 +79,12 @@
 
 .user-stats .text {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .user-stats p {
+    font-size: 12px;
+  }
 }
 
 .followers {

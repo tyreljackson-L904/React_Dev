@@ -42,6 +42,13 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .follow-btn {
+    padding: 4px 5px;
+    border-radius: 5px;
+  }
+}
+
 .follow-btn:active {
   background-color: #fff;
 }

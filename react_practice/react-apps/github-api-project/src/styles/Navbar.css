@@ -7,3 +7,9 @@
 .nav-title {
   color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .nav-title {
+    font-size: 20px;
+  }
+}

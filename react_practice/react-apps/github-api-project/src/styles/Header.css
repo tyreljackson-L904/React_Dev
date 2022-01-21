@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 27px;
 }
 
 .header {
@@ -12,6 +12,22 @@
   color: #fff;
 }
 
+.octocat-image {
+  width: 250px;
+  height: 225px;
+}
+
 .sub-header {
   color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .octocat-image {
+    width: 125px;
+    height: 100px;
+  }
+
+  .sub-header {
+    font-size: 15px;
+  }
 }

@@ -29,10 +29,11 @@ const FollowingCard = ({ user }: FollowingType) => {
 
   useEffect(() => {
     if (user) {
-      getFollowerCount().then((followerCount) => {
-        setFollowerCount(followerCount);
+      getFollowerCount().then((numOfFollowers) => {
+        setFollowerCount(numOfFollowers);
       });
     }
+    console.log(followerCount);
   }, [user]);
 
   return (

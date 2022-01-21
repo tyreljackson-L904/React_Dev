@@ -19,7 +19,7 @@ const Search = ({ onChange, onClick, value }: SearchProps) => {
         size={80}
       />
       <button type="submit" className="search-btn" onClick={onClick}>
-        Fetch User
+        Get User
       </button>
     </div>
   );

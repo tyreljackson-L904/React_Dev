@@ -6,7 +6,6 @@
 }
 
 .follower-card {
-  width: 35%;
   display: flex;
   background-color: #333;
   padding: 10px;
@@ -16,17 +15,27 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .follower-card {
+    margin-right: 23%;
+  }
+}
+
 img {
   margin: 0 10px 0 !important;
 }
 
 .follower-avatar {
-  /* border-style: solid;
-  border-width: 3px;
-  border-image: linear-gradient(45deg, #8e2de2, #4a00e0); */
   border-radius: 50%;
   width: 100px;
   height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .follower-avatar {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .follower-username {
@@ -34,9 +43,22 @@ img {
   font-size: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .follower-username {
+    font-size: 12px;
+  }
+}
+
 .follower-count {
   border-radius: 10px;
   background-color: rgb(84, 84, 84);
   padding: 10px 10px;
-  width: 150px;
+  max-width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .follower-count {
+    border-radius: 5px;
+    padding: 5px 5px;
+  }
 }

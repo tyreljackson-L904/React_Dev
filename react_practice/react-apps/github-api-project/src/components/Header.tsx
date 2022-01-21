@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="container">
       <div>
-        <img src={Octacat} alt="Github Octacat" width="250px" height="225px" />
+        <img src={Octacat} alt="Github Octacat" className="octocat-image" />
       </div>
       <h3 className="sub-header">Search Github users using the Github api</h3>
     </div>

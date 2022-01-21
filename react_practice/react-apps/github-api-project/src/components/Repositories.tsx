@@ -32,7 +32,6 @@ const Repos = () => {
         <table className="repo-header">
           <tr>
             <th className="header-item">Name</th>
-            <th className="header-item">Last Updated</th>
             <th className="header-item">Language</th>
             <th className="header-item">Description</th>
             <th className="header-item">Profile</th>
