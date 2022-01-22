@@ -1,4 +1,4 @@
-.repo-container {
+.repo-header {
   margin: 0;
 }
 
@@ -10,8 +10,8 @@
 
 table {
   border-radius: 10px;
-  width: 80%;
-  margin: 0 50px;
+  width: 60%;
+  margin: 0 15%;
   background-color: #fff;
   padding: 10px 0;
 }
@@ -23,6 +23,6 @@ table {
   }
 
   th {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
