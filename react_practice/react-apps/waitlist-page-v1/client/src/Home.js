@@ -1,10 +1,11 @@
 import "./Home.css";
 import Header from "./Header";
 import CTAForm from "./CTAForm";
+import FeatureSection from "./FeatureSection";
 
 function Home() {
   return (
-    <div className="gray-background">
+    <div className="main-container">
       <div className="main">
         <div className="page-container">
           <div className="page-header">
@@ -16,6 +17,9 @@ function Home() {
             <Header />
             <CTAForm />
           </div>
+        </div>
+        <div className="features-container">
+          <FeatureSection />
         </div>
       </div>
     </div>
