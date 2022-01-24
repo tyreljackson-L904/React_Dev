@@ -17,9 +17,9 @@ function Home() {
             <Header />
             <CTAForm />
           </div>
-        </div>
-        <div className="features-container">
-          <FeatureSection />
+          <div className="features-container">
+            <FeatureSection />
+          </div>
         </div>
       </div>
     </div>

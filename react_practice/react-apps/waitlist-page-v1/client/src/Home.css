@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
-  min-height: 80vh;
+  min-height: 200vh;
   background: linear-gradient(#1e90ff 0%, rgb(0, 191, 255) 100%);
 }
 
@@ -46,6 +46,11 @@
 .social-icons {
   display: flex;
   justify-content: space-between;
+}
+
+.influencer {
+  width: 600px;
+  height: 400px;
 }
 
 form {

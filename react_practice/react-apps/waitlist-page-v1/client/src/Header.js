@@ -1,5 +1,6 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
+import influencer from "./images/instagram_influencer.png";
 
 function Header() {
   return (
@@ -18,6 +19,7 @@ function Header() {
         <SocialIcon network="snapchat" bgColor="#000" className="icon" />
         <SocialIcon network="facebook" bgColor="#000" className="icon" />
       </div>
+      <img src={influencer} alt="insta influencer" className="influencer" />
     </div>
   );
 }
