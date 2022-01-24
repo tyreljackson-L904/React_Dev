@@ -1,42 +1,52 @@
 import React from "react";
+import "./FeaturesSection.css";
+import { AiOutlineSearch } from "react-icons/ai";
+import { RiShoppingCart2Line } from "react-icons/ri";
+import { GiTakeMyMoney } from "react-icons/gi";
+import collage from "./images/collage.jpeg";
 
 const FeaturesSection = () => {
   return (
     <div className="center-features__container">
-      <div className="center-features__headline">
-        <h2 className="header">You want the best discount anywhere.</h2>
-        <h4 className="sub-header">
-          Procode has brought them to you to save you the most money
-          <br />
-          on your favorite products from all your favorite companies
-          <br />
-          from your favorite creators big and small.
-        </h4>
-      </div>
-      <div className="center-features__feature-grid">
-        <div className="feature-one">
-          <img src="" alt="" className="logo" />
-          <h3 className="feature-header">Feature 1</h3>
-          <h4 className="feature-subheader">
-            This is a feature subheader describing what you get with this
-            feature
+      <div className="center-features__card-container">
+        <div className="center-features__headline">
+          <h2 className="header">You want the best discount anywhere.</h2>
+          <h4 className="sub-header">
+            Procode has brought them to you to save you the most money
+            <br />
+            on your favorite products from all your favorite companies
+            <br />
+            from your favorite creators big and small.
           </h4>
         </div>
-        <div className="feature-two">
-          <img src="" alt="" className="logo" />
-          <h3 className="feature-header">Feature 1</h3>
-          <h4 className="feature-subheader">
-            This is a feature subheader describing what you get with this
-            feature
-          </h4>
+        <div className="center-features__feature-grid">
+          <div className="feature-one">
+            <AiOutlineSearch className="logo" />
+            <h3 className="feature-header">Search</h3>
+            <h4 className="feature-subheader">
+              This is a feature subheader describing what you get with this
+              feature
+            </h4>
+          </div>
+          <div className="feature-two">
+            <RiShoppingCart2Line className="logo" />
+            <h3 className="feature-header">Shop</h3>
+            <h4 className="feature-subheader">
+              This is a feature subheader describing what you get with this
+              feature
+            </h4>
+          </div>
+          <div className="feature-three">
+            <GiTakeMyMoney className="logo" />
+            <h3 className="feature-header">Save</h3>
+            <h4 className="feature-subheader">
+              This is a feature subheader describing what you get with this
+              feature
+            </h4>
+          </div>
         </div>
-        <div className="feature-three">
-          <img src="" alt="" className="logo" />
-          <h3 className="feature-header">Feature 1</h3>
-          <h4 className="feature-subheader">
-            This is a feature subheader describing what you get with this
-            feature
-          </h4>
+        <div className="features__second-container">
+          <img src={collage} alt="brand collage" />
         </div>
       </div>
     </div>
