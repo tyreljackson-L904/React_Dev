@@ -18,6 +18,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .card {
+    margin: 0 23%;
+  }
+}
+
 .circle-avatar img {
   border: 1.5px solid #fff;
   border-radius: 50%;

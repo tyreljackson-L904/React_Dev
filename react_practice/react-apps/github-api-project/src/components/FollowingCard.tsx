@@ -13,9 +13,7 @@ type FollowingType = {
 };
 
 const FollowingCard = ({ user }: FollowingType) => {
-  const [followerCount, setFollowerCount] = useState<FollowingType | null>(
-    null
-  );
+  const [followerCount, setFollowerCount] = useState<number | null>(null);
 
   const getFollowerCount = async () => {
     const url = `https://api.github.com/users/${user.login}`;
@@ -29,11 +27,10 @@ const FollowingCard = ({ user }: FollowingType) => {
 
   useEffect(() => {
     if (user) {
-      getFollowerCount().then((numOfFollowers) => {
-        setFollowerCount(numOfFollowers);
+      getFollowerCount().then(() => {
+        setFollowerCount(user.followerCount);
       });
     }
-    console.log(followerCount);
   }, [user]);
 
   return (
