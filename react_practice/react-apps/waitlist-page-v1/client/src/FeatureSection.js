@@ -12,7 +12,7 @@ const FeaturesSection = () => {
         <div className="center-features__headline">
           <h2 className="header">You want the best discount anywhere.</h2>
           <h4 className="sub-header">
-            Procode has brought them to you to save you the most money
+            ProCode has brought them to you to save you the most money
             <br />
             on your favorite products from all your favorite companies
             <br />
@@ -24,24 +24,23 @@ const FeaturesSection = () => {
             <AiOutlineSearch className="logo" />
             <h3 className="feature-header">Search</h3>
             <h4 className="feature-subheader">
-              This is a feature subheader describing what you get with this
-              feature
+              Easily search for discounts based on brand, category or creator.
             </h4>
           </div>
           <div className="feature-two">
             <RiShoppingCart2Line className="logo" />
             <h3 className="feature-header">Shop</h3>
             <h4 className="feature-subheader">
-              This is a feature subheader describing what you get with this
-              feature
+              Simply click on the discount for it to be applied across the web
+              on your favorite products.
             </h4>
           </div>
           <div className="feature-three">
             <GiTakeMyMoney className="logo" />
             <h3 className="feature-header">Save</h3>
             <h4 className="feature-subheader">
-              This is a feature subheader describing what you get with this
-              feature
+              Instantly save big on the most curated marketplace of products
+              based soley on creators.
             </h4>
           </div>
         </div>
