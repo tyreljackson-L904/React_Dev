@@ -1,10 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "../src/styles/App.css";
+import Home from "./components/Home";
+import { Routes, Route } from "react-router";
+import Navbar from "./components/Navbar";
+import BestSellers from "./components/BestSellers";
 
 function App() {
   return (
     <div className="App">
-      <h2>Ecommerce App</h2>
+      <Routes>
+        <Route path="/" element={<Navbar />}>
+          <Route path="home" element={<Home />} />
+          <Route path="bestsellers" element={<BestSellers />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
