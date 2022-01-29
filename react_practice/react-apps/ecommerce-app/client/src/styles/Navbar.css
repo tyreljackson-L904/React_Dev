@@ -1,17 +1,21 @@
 .navbar {
-  display: flex;
-  width: 100vw;
+  display: inline-flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
+  margin: 0 10px;
 }
 
 .navbar__title {
-  color: #333;
+  font-size: 22px;
+  color: black;
+  font-style: italic;
 }
 
 .navbar__menu {
   display: flex;
   align-items: center;
+  margin: 0 20px;
 }
 
 .navbar ul {
@@ -22,10 +26,13 @@
 .navbar li {
   list-style: none;
   text-decoration: none;
+  margin: 0 20px;
 }
 
 .navbar__link {
   text-decoration: none;
+  color: black;
+  font-weight: 500;
 }
 
 .navbar__menu li {
@@ -33,10 +40,34 @@
 }
 
 .navbar__shopping-cart-icon {
-  display: inline-flex;
+  width: 20px;
+  height: 20px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+.navbar__shopping-cart-icon:hover {
+  cursor: pointer;
+}
+
+.hamburger-navbar_icon {
+  display: none;
+}
+
+.login-btn {
+  border: none;
+  background-color: rgba(255, 200, 0, 0.758);
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 2px;
+  margin-left: 20px;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+}
+
+/************ MOBILE NAV ************/
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
   .navbar__menu {
     display: flex;
     flex-direction: column;
@@ -44,11 +75,7 @@
     position: relative;
   }
 
-  .navbar__title {
-    color: #fff;
-  }
-
-  .navbar__title.active {
+  .mobile-navbar__title {
     font-size: 30px;
     color: #fff;
     font-style: italic;
@@ -91,6 +118,10 @@
     background-color: rgba(0, 0, 0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
+  }
+
+  .hamburger-navbar_icon {
+    display: flex;
   }
 
   .mobile-active {
