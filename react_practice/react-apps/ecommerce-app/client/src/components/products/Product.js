@@ -44,7 +44,7 @@ const Product = ({ product }) => {
         <CardContent>
           <div className={classes.cardContent}>
             <Typography variant="h6">{product.name}</Typography>
-            <Typography variant="h7">{product.price}</Typography>
+            <Typography variant="h7" color="green">{product.price}</Typography>
           </div>
           <Typography
             variant="body2"
