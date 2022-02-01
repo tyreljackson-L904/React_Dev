@@ -13,7 +13,8 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { MenuItems } from "./MenuItems";
-
+import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -37,6 +38,7 @@ const Navbar = () => {
       />
     </>
   );
+
   return (
     <div>
       <div className="navbar">
@@ -56,11 +58,9 @@ const Navbar = () => {
                 </li>
               );
             })}
-            <AiOutlineShoppingCart
-              className="navbar__shopping-cart-icon"
-              size={35}
-              onClick={() => {}}
-            />
+            <Badge badgeContent={2} color="error">
+              <ShoppingCartIcon onClick={() => {}} />
+            </Badge>
             <Link to="login" className="navbar__login-btn mobile">
               <button className="login-btn">Login</button>
             </Link>
@@ -89,12 +89,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-
-  // if (isOpen) {
-  //   return <MobileNav onClick={selectItem} setIsOpen={!isOpen} />;
-  // }
-
-  // return <DesktopNav onClick={selectItem} />;
 };
 
 export default Navbar;

@@ -19,5 +19,5 @@ export const MenuItems = [
     url: "reviews",
     cName: "navbar__link",
   },
-  
 ];
+
