@@ -16,8 +16,10 @@ import { MenuItems } from "./MenuItems";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../styles/Navbar.css";
+import Products from "./products/Products";
+import ProductDetails from "./products/ProductDetails";
 
-const Navbar = () => {
+const Navbar = ({ products }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => setIsOpen(!isOpen);
   const closeMobileMenu = () => {
@@ -80,7 +82,7 @@ const Navbar = () => {
       </div>
       <div className="main">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Products products={products} />} />
           <Route path="bestsellers" element={<BestSellers />} />
           <Route path="underthirty" element={<UnderThirty />} />
           <Route path="reviews" element={<Reviews />} />

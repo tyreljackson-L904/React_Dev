@@ -11,21 +11,24 @@ function App() {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
-    const { data } = await commerce.products.list();
+    try {
+      const { data } = await commerce.products.list();
 
-    setProducts(data);
+      console.log(data);
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  console.log(products);
-
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Navbar products={products} />}>
           <Route path="home" element={<Home />} />
           <Route path="bestsellers" element={<BestSellers />} />
           <Route path="underthirty" element={<UnderThirty />} />

@@ -6,60 +6,65 @@ import {
   CardMedia,
   CardContent,
   Button,
-  Grid,
   IconButton,
+  AvatarGroup,
+  Avatar,
 } from "@mui/material";
 import { AddShoppingCart } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: "100%",
-    margin: "10px",
-  },
-  media: {
-    height: 0,
-    paddingTop: "54.25%",
-    marginLeft: "40px",
-    marginRight: "40px",
-    marginTop: "20px",
-  },
-  cardContent: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  cardActions: {
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-});
+import { useStyles } from "../styles";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const classes = useStyles();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    // navigate("../productdetails");
+  };
+
   return (
     <div>
-      <Card key={product.id} className={classes.root}>
-        <CardMedia className={classes.media} image={product.img} />
-        <CardContent>
-          <div className={classes.cardContent}>
-            <Typography variant="h6">{product.name}</Typography>
-            <Typography variant="h7" color="green">{product.price}</Typography>
-          </div>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            className={classes.cardContent}
-          >
-            {product.description}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing className={classes.cardActions}>
-          <IconButton aria-label="Add to Cart">
-            <AddShoppingCart />
-          </IconButton>
-        </CardActions>
-      </Card>
+      <Link to="/productdetails">
+        <Card key={product.id} className={classes.root} onClick={handleClick}>
+          <CardMedia
+            className={classes.media}
+            image={product.image.url}
+            title={product.name}
+          />
+          <CardContent>
+            <div className={classes.cardContent}>
+              <Typography variant="h7">{product.name}</Typography>
+              <Typography variant="body2" color="green">
+                {product.price.formatted_with_symbol}
+              </Typography>
+            </div>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              className={classes.cardContent}
+            >
+              {product.categories.name}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing className={classes.cardActions}>
+            <AvatarGroup>
+              {product.assets.map((id) => {
+                return (
+                  <Avatar
+                    key={id}
+                    src={product.assets.url}
+                    sx={{ width: 24, height: 24 }}
+                  />
+                );
+              })}
+            </AvatarGroup>
+            <IconButton aria-label="Add to Cart">
+              <AddShoppingCart />
+            </IconButton>
+          </CardActions>
+        </Card>
+      </Link>
     </div>
   );
 };
