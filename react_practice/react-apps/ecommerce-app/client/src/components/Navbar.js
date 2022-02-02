@@ -18,8 +18,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../styles/Navbar.css";
 import Products from "./products/Products";
 import ProductDetails from "./products/ProductDetails";
+import { IconButton } from "@mui/material";
 
-const Navbar = ({ products }) => {
+const Navbar = ({ products, onAddToCart, totalItems }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => setIsOpen(!isOpen);
   const closeMobileMenu = () => {
@@ -60,9 +61,11 @@ const Navbar = ({ products }) => {
                 </li>
               );
             })}
-            <Badge badgeContent={2} color="error">
-              <ShoppingCartIcon onClick={() => {}} />
-            </Badge>
+            <IconButton aria-label="Show cart items" color="inherit">
+              <Badge badgeContent={totalItems} color="error">
+                <ShoppingCartIcon />
+              </Badge>
+            </IconButton>
             <Link to="login" className="navbar__login-btn mobile">
               <button className="login-btn">Login</button>
             </Link>
@@ -82,7 +85,10 @@ const Navbar = ({ products }) => {
       </div>
       <div className="main">
         <Routes>
-          <Route path="/" element={<Products products={products} />} />
+          <Route
+            path="/"
+            element={<Products products={products} onAddToCart={onAddToCart} />}
+          />
           <Route path="bestsellers" element={<BestSellers />} />
           <Route path="underthirty" element={<UnderThirty />} />
           <Route path="reviews" element={<Reviews />} />

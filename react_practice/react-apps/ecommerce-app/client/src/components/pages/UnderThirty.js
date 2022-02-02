@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/UnderThirty.css"
+import "../../styles/UnderThirty.css"
 
 const UnderThirty = () => {
   return (
