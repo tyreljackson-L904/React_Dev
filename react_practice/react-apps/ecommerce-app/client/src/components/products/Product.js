@@ -52,7 +52,7 @@ const Product = ({ product, onAddToCart }) => {
               return (
                 <Avatar
                   key={id}
-                  src={product.assets.url}
+                  src={id.url}
                   sx={{ width: 24, height: 24 }}
                 />
               );
