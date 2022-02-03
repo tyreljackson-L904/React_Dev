@@ -1,5 +1,5 @@
 export { default as Home } from "./pages/Home"
 export { default as BestSellers } from "./pages/BestSellers"
 export { default as Reviews } from "./pages/Reviews"
-export { default as ShoppingCart } from "./pages/ShoppingCart"
+export { default as ShoppingCart } from "./Cart/ShoppingCart"
 export {default as UnderThirty} from "./pages/UnderThirty"

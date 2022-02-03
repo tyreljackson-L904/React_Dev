@@ -12,12 +12,10 @@ import {
 } from "@mui/material";
 import { AddShoppingCart } from "@mui/icons-material";
 import { useStyles } from "../styles";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
-  const navigate = useNavigate();
 
   const handleClick = () => {
     // navigate("../productdetails");
@@ -27,6 +25,7 @@ const Product = ({ product, onAddToCart }) => {
     <div>
       <Card key={product.id} className={classes.root}>
         <CardMedia
+          component="img"
           className={classes.media}
           image={product.image.url}
           title={product.name}

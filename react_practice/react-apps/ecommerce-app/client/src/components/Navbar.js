@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, Outlet } from "react-router-dom";
 import {
-  Home,
   BestSellers,
   UnderThirty,
   Reviews,
-  ShoppingCart,
 } from "../components";
+import ShoppingCart from "./Cart/ShoppingCart"
 import {
   AiOutlineShoppingCart,
   AiOutlineMenu,
@@ -17,10 +16,14 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../styles/Navbar.css";
 import Products from "./products/Products";
-import ProductDetails from "./products/ProductDetails";
 import { IconButton } from "@mui/material";
 
-const Navbar = ({ products, onAddToCart, totalItems }) => {
+
+
+
+
+
+const Navbar = ({ products, onAddToCart, totalItems, cart }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => setIsOpen(!isOpen);
   const closeMobileMenu = () => {
@@ -61,11 +64,13 @@ const Navbar = ({ products, onAddToCart, totalItems }) => {
                 </li>
               );
             })}
-            <IconButton aria-label="Show cart items" color="inherit">
-              <Badge badgeContent={totalItems} color="error">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
+            <Link to="shoppingcart">
+              <IconButton aria-label="Show cart items" color="inherit">
+                <Badge badgeContent={totalItems} color="error">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
             <Link to="login" className="navbar__login-btn mobile">
               <button className="login-btn">Login</button>
             </Link>
@@ -84,16 +89,7 @@ const Navbar = ({ products, onAddToCart, totalItems }) => {
         </div>
       </div>
       <div className="main">
-        <Routes>
-          <Route
-            path="/"
-            element={<Products products={products} onAddToCart={onAddToCart} />}
-          />
-          <Route path="bestsellers" element={<BestSellers />} />
-          <Route path="underthirty" element={<UnderThirty />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route path="shoppingcart" element={<ShoppingCart />} />
-        </Routes>
+        <Outlet/>
       </div>
     </div>
   );

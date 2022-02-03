@@ -2,13 +2,13 @@ import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles({
   root: {
-    maxWidth: '100%',
-    margin: "10px"
+    maxWidth: '70%',
   },
   media: {
-    height: 0,
-    paddingTop: '57.25%', // 16:9
-    margin: "10px"
+    height: "150px",
+    width: " 200px",
+    objectFit: "contain",
+    justifyContent: "space-around"
   },
   cardActions: {
     display: 'flex',
@@ -19,3 +19,4 @@ export const useStyles = makeStyles({
     justifyContent: 'space-between',
   },
 });
+

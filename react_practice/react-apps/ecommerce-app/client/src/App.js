@@ -3,9 +3,15 @@ import "../src/styles/App.css";
 import Home from "./components/pages/Home";
 import { Routes, Route } from "react-router";
 import Navbar from "./components/Navbar";
-import { BestSellers, UnderThirty, Reviews } from "./components/index";
+import {
+  BestSellers,
+  UnderThirty,
+  Reviews,
+  ShoppingCart,
+} from "./components/index";
 import Login from "./components/Login/Login";
 import { commerce } from "./lib/commerce";
+import Products from "./components/products/Products";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -45,13 +51,20 @@ function App() {
               products={products}
               onAddToCart={handleAddToCart}
               totalItems={cart.total_items}
+              cart={cart}
             />
           }
         >
-          <Route path="home" element={<Home />} />
+          <Route
+            index
+            element={
+              <Products products={products} onAddToCart={handleAddToCart} />
+            }
+          />
           <Route path="bestsellers" element={<BestSellers />} />
           <Route path="underthirty" element={<UnderThirty />} />
           <Route path="reviews" element={<Reviews />} />
+          <Route path="shoppingcart" element={<ShoppingCart cart={cart} />} />
           <Route path="login" element={<Login />} />
         </Route>
       </Routes>
