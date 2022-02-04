@@ -7,8 +7,9 @@ export const useStyles = makeStyles({
   media: {
     height: "150px",
     width: " 200px",
+    // justifyContent: "center",
+    margin: "auto",
     objectFit: "contain",
-    justifyContent: "space-around"
   },
   cardActions: {
     display: 'flex',

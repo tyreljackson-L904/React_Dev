@@ -32,8 +32,23 @@ function App() {
   };
 
   const handleAddToCart = async (productId, quantity) => {
-    const item = await commerce.cart.add(productId, quantity);
-    setCart(item.cart);
+    const { cart } = await commerce.cart.add(productId, quantity);
+    setCart(cart);
+  };
+
+  const handleUpdateCartQty = async (productId, quantity) => {
+    const { cart } = await commerce.cart.update(productId, { quantity });
+    setCart(cart);
+  };
+
+  const handleRemoveFromCart = async (productId) => {
+    const { cart } = await commerce.cart.remove(productId);
+    setCart(cart);
+  };
+
+  const handleEmptyCart = async () => {
+    const { cart } = await commerce.cart.empty();
+    setCart(cart);
   };
 
   useEffect(() => {
@@ -64,7 +79,17 @@ function App() {
           <Route path="bestsellers" element={<BestSellers />} />
           <Route path="underthirty" element={<UnderThirty />} />
           <Route path="reviews" element={<Reviews />} />
-          <Route path="shoppingcart" element={<ShoppingCart cart={cart} />} />
+          <Route
+            path="shoppingcart"
+            element={
+              <ShoppingCart
+                cart={cart}
+                handleUpdateCartQty={handleUpdateCartQty}
+                handleRemoveFromCart={handleRemoveFromCart}
+                handleEmptyCart={handleEmptyCart}
+              />
+            }
+          />
           <Route path="login" element={<Login />} />
         </Route>
       </Routes>

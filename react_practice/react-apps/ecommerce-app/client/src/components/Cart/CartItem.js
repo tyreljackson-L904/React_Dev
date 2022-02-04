@@ -10,9 +10,11 @@ import {
 } from "@mui/material";
 
 import { useStyles } from "./styles";
+import { commerce } from "../../lib/commerce";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartQty }) => {
   const classes = useStyles();
+
   return (
     <Card key={item.id} sx={{ height: 150 }} className={classes.root}>
       <CardMedia
@@ -32,15 +34,35 @@ const CartItem = ({ item }) => {
         </CardContent>
         <CardActions className={classes.cardActions}>
           <div className={classes.buttons}>
-            <Button type="button" size="medium">
+            <Button
+              type="button"
+              size="small"
+              sx={{ fontSize: "28px" }}
+              onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}
+            >
               -
             </Button>
             <Typography>{item.quantity}</Typography>
-            <Button type="button" size="medium">
+            <Button
+              type="button"
+              size="small"
+              sx={{ fontSize: "22px" }}
+              onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
+            >
               +
             </Button>
           </div>
         </CardActions>
+        <Button
+          type="button"
+          size="small"
+          variant="contained"
+          color="error"
+          className={classes.remove}
+          onClick={() => handleRemoveFromCart(item.id)}
+        >
+          Remove
+        </Button>
       </Box>
     </Card>
   );

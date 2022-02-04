@@ -8,13 +8,17 @@ export const useStyles = makeStyles({
     justifyContent: "space-between",
   },
   container: {
-    marginTop: "10%"
+    marginTop: "10%",
+    marginBottom: "10%",
+    width: "50%"
   },
   media: {
     height: "150px",
     width: " 200px",
     objectFit: "contain",
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingTop: "5px",
+    paddingBottom: "5px"
   },
   content: {
     display: "flex",
@@ -34,6 +38,9 @@ export const useStyles = makeStyles({
     display: "flex",
     justifyContent: "end",
     alignItems: "center",
+  },
+  remove: {
+    marginRight: "10px"
   },
   buttons: {
     display: "flex",

@@ -3,13 +3,18 @@ import { useStyles } from "./styles";
 
 import { Container, Typography, Grid, Button } from "@mui/material";
 import CartItem from "./CartItem";
+import { commerce } from "../../lib/commerce";
 
-const ShoppingCart = ({ cart }) => {
+const ShoppingCart = ({
+  cart,
+  handleEmptyCart,
+  handleRemoveFromCart,
+  handleUpdateCartQty,
+}) => {
   const classes = useStyles();
 
   const EmptyCart = () => {
     <Typography variant="subtitle1">
-      {" "}
       You have no items in your shopping cart, start shopping!
     </Typography>;
   };
@@ -27,7 +32,11 @@ const ShoppingCart = ({ cart }) => {
               key={item.id}
               sx={{ display: "flex", flexDirection: "column" }}
             >
-              <CartItem item={item} />
+              <CartItem
+                item={item}
+                handleRemoveFromCart={handleRemoveFromCart}
+                handleUpdateCartQty={handleUpdateCartQty}
+              />
             </Grid>
           ))}
         </Grid>
@@ -41,6 +50,7 @@ const ShoppingCart = ({ cart }) => {
             type="button"
             variant="contained"
             color="secondary"
+            onClick={handleEmptyCart}
           >
             Empty Cart
           </Button>
@@ -58,13 +68,15 @@ const ShoppingCart = ({ cart }) => {
     );
   };
 
-  if (!cart.line_items) return "Loading...";
+  if (!cart.line_items) {
+    return "Loading...";
+  }
 
   return (
     <Container className={classes.container}>
       <div className={classes.toolbar} />
       <Typography className={classes.title} variant="h3">
-        {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
+        {!cart.line_items ? <EmptyCart /> : <FilledCart />}
       </Typography>
     </Container>
   );

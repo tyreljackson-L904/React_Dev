@@ -29,7 +29,6 @@ const Product = ({ product, onAddToCart }) => {
           className={classes.media}
           image={product.image.url}
           title={product.name}
-          onClick={handleClick}
         />
         <CardContent>
           <div className={classes.cardContent}>
