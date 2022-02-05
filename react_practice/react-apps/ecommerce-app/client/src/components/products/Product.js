@@ -9,27 +9,32 @@ import {
   IconButton,
   AvatarGroup,
   Avatar,
+  Link,
 } from "@mui/material";
 import { AddShoppingCart } from "@mui/icons-material";
 import { useStyles } from "../styles";
+import { NavLink } from "react-router-dom";
 
-
-const Product = ({ product, onAddToCart }) => {
+const Product = ({ product, onAddToCart, onSelected }) => {
   const classes = useStyles();
 
-  const handleClick = () => {
-    // navigate("../productdetails");
-  };
+  // const handleClick = () => {};
 
   return (
     <div>
       <Card key={product.id} className={classes.root}>
-        <CardMedia
-          component="img"
-          className={classes.media}
-          image={product.image.url}
-          title={product.name}
-        />
+        <NavLink
+          to={`/productdetails/${product.id}`}
+          key={product.id}
+          onClick={() => onSelected(product)}
+        >
+          <CardMedia
+            component="img"
+            className={classes.media}
+            image={product.image.url}
+            title={product.name}
+          />
+        </NavLink>
         <CardContent>
           <div className={classes.cardContent}>
             <Typography variant="h7">{product.name}</Typography>
@@ -49,11 +54,7 @@ const Product = ({ product, onAddToCart }) => {
           <AvatarGroup>
             {product.assets.map((id) => {
               return (
-                <Avatar
-                  key={id}
-                  src={id.url}
-                  sx={{ width: 24, height: 24 }}
-                />
+                <Avatar key={id} src={id.url} sx={{ width: 24, height: 24 }} />
               );
             })}
           </AvatarGroup>

@@ -23,7 +23,7 @@ import { IconButton } from "@mui/material";
 
 
 
-const Navbar = ({ products, onAddToCart, totalItems, cart }) => {
+const Navbar = ({ totalItems }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => setIsOpen(!isOpen);
   const closeMobileMenu = () => {
@@ -91,6 +91,7 @@ const Navbar = ({ products, onAddToCart, totalItems, cart }) => {
       <div className="main">
         <Outlet/>
       </div>
+      
     </div>
   );
 };

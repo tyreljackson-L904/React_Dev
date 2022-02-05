@@ -12,10 +12,12 @@ import {
 import Login from "./components/Login/Login";
 import { commerce } from "./lib/commerce";
 import Products from "./components/products/Products";
+import ProductDetails from "./components/products/ProductDetails";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  const [selected, setSelected] = useState(null);
 
   const fetchProducts = async () => {
     try {
@@ -25,6 +27,10 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const onSelected = (product) => {
+    setSelected(product);
   };
 
   const fetchCart = async () => {
@@ -58,40 +64,16 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar totalItems={cart.total_items} />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Navbar
-              products={products}
-              onAddToCart={handleAddToCart}
-              totalItems={cart.total_items}
-              cart={cart}
-            />
-          }
-        >
-          <Route
-            index
-            element={
-              <Products products={products} onAddToCart={handleAddToCart} />
-            }
-          />
-          <Route path="bestsellers" element={<BestSellers />} />
-          <Route path="underthirty" element={<UnderThirty />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route
-            path="shoppingcart"
-            element={
-              <ShoppingCart
-                cart={cart}
-                handleUpdateCartQty={handleUpdateCartQty}
-                handleRemoveFromCart={handleRemoveFromCart}
-                handleEmptyCart={handleEmptyCart}
-              />
-            }
-          />
-          <Route path="login" element={<Login />} />
+        <Route path="/" element={<Products products={products} onAddToCart={handleAddToCart} onSelected={onSelected} />}>
+          <Route path="productdetails" element={<ProductDetails product={selected} />} />
         </Route>
+        <Route path="bestsellers" element={<BestSellers />} />
+        <Route path="underthirty" element={<UnderThirty />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="shoppingcart" element={<ShoppingCart cart={cart} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </div>
   );
