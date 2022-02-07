@@ -17,10 +17,13 @@ const ProductDetails = () => {
   const classes = useStyles();
   const { productId } = useParams();
 
+  console.log(product);
+
   const getProductDetails = async () => {
     try {
-      const { data } = await commerce.products.retrieve(productId);
-
+      const { data } = await commerce.products
+        .retrieve(productId, { type: "id" })
+        .then((item) => console.log(item.name));
       setProduct(data);
     } catch (error) {
       console.log(error);
@@ -29,7 +32,9 @@ const ProductDetails = () => {
 
   useEffect(() => {
     getProductDetails();
-  }, []);
+  }, [productId]);
+
+  console.log(product);
 
   return (
     <>

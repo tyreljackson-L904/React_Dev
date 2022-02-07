@@ -5,28 +5,28 @@ import {
   CardActions,
   CardMedia,
   CardContent,
-  Button,
   IconButton,
   AvatarGroup,
   Avatar,
-  Link,
 } from "@mui/material";
 import { AddShoppingCart } from "@mui/icons-material";
 import { useStyles } from "../styles";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Product = ({ product, onAddToCart, onSelected }) => {
   const classes = useStyles();
 
-  // const handleClick = () => {};
+  const handleSelected = () => {
+    onSelected(product)
+  }
 
   return (
     <div>
       <Card key={product.id} className={classes.root}>
-        <NavLink
+        <Link
           to={`/productdetails/${product.id}`}
           key={product.id}
-          onClick={() => onSelected(product)}
+          onClick={handleSelected}
         >
           <CardMedia
             component="img"
@@ -34,7 +34,7 @@ const Product = ({ product, onAddToCart, onSelected }) => {
             image={product.image.url}
             title={product.name}
           />
-        </NavLink>
+        </Link>
         <CardContent>
           <div className={classes.cardContent}>
             <Typography variant="h7">{product.name}</Typography>

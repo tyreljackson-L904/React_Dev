@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../src/styles/App.css";
 import Home from "./components/pages/Home";
-import { Routes, Route } from "react-router";
+import { Routes, Route, Outlet } from "react-router";
 import Navbar from "./components/Navbar";
 import {
   BestSellers,
@@ -67,7 +67,7 @@ function App() {
       <Navbar totalItems={cart.total_items} />
       <Routes>
         <Route path="/" element={<Products products={products} onAddToCart={handleAddToCart} onSelected={onSelected} />}>
-          <Route path="productdetails" element={<ProductDetails product={selected} />} />
+          <Route path="/productdetails/:pokemonId" element={<ProductDetails product={selected} />} />
         </Route>
         <Route path="bestsellers" element={<BestSellers />} />
         <Route path="underthirty" element={<UnderThirty />} />
