@@ -1,30 +1,23 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Button,
-  Typography,
-} from "@mui/material";
+import { CardActions, Button } from "@mui/material";
 import { useStyles } from "./styles";
+import "./ProductDetails.css";
 import { useParams } from "react-router-dom";
 import { commerce } from "../../lib/commerce";
 
-const ProductDetails = () => {
+const ProductDetails = ({ onAddToCart }) => {
   const [product, setProduct] = useState([]);
-  const classes = useStyles();
+  const [isLoading, setIsLoading] = useState(true);
   const { productId } = useParams();
-
-  console.log(product);
+  const classes = useStyles();
 
   const getProductDetails = async () => {
     try {
-      const { data } = await commerce.products
-        .retrieve(productId, { type: "id" })
-        .then((item) => console.log(item.name));
-      setProduct(data);
+      const response = await commerce.products.retrieve(productId, {
+        type: "id",
+      });
+      setProduct(response);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -34,23 +27,79 @@ const ProductDetails = () => {
     getProductDetails();
   }, [productId]);
 
-  console.log(product);
+  if (isLoading) {
+    return <div className={classes.loading}>"Loading..."</div>;
+  }
 
   return (
-    <>
-      <Box container className={classes.main}>
-        <Box container className={classes.productImage}>
-          <CardMedia
-            component="img"
-            className={classes.media}
-            image={product.image.url}
-            title={product.name}
+    <div className="product__main-container">
+      <div className="product__horizontal-images-container">
+        <div className="product__main-image">
+          <img
+            className="image"
+            src={product.image.url}
+            alt={product.variant_groups.name}
           />
-          <Card className={classes.colorOptions}></Card>
-        </Box>
-        <Card container className={classes.productDetails}></Card>
-      </Box>
-    </>
+        </div>
+        <div className="product__color-options">
+          {product.assets.map((color, id) => {
+            return (
+              <img
+                className="product__color-image"
+                key={id}
+                src={color.url}
+                alt="alt"
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="product__product-content">
+        <div className="container">
+          <h3 className="product__title">{product.name}</h3>
+          <h5 className="product__category">{product.categories[0]?.name}</h5>
+          <h4 className="product__price">
+            {product.price.formatted_with_symbol}
+          </h4>
+        </div>
+        <div className="container">
+          <p className="product__description">
+            {product.description.replace(/<(?:.|\n)*?>/gm, "")}
+          </p>
+        </div>
+        <div className="product__details">
+          <span>Model:</span>
+          <span className="details">{product.id}</span>
+
+          <span>Color:</span>
+          <span className="details">
+            {product.variant_groups[0]?.options[0].name}
+          </span>
+
+          <span>Delivery:</span>
+          <span className="details">Domestic, International</span>
+        </div>
+        <div>
+          <CardActions className="cart-button">
+            <div>
+              <Button
+                type="button"
+                size="small"
+                variant="contained"
+                sx={{
+                  fontSize: "16px",
+                  backgroundColor: "#FFC800",
+                  color: "black",
+                }}
+                onClick={() => onAddToCart(product.id, 1)}
+              >
+                Add To Cart
+              </Button>
+            </div>
+          </CardActions>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -66,9 +66,8 @@ function App() {
     <div className="App">
       <Navbar totalItems={cart.total_items} />
       <Routes>
-        <Route path="/" element={<Products products={products} onAddToCart={handleAddToCart} onSelected={onSelected} />}>
-          <Route path="/productdetails/:pokemonId" element={<ProductDetails product={selected} />} />
-        </Route>
+        <Route path="/" element={<Products products={products} onAddToCart={handleAddToCart} onSelected={onSelected} />} />
+        <Route path="/productdetails/:productId" element={<ProductDetails onAddToCart={handleAddToCart} />} />
         <Route path="bestsellers" element={<BestSellers />} />
         <Route path="underthirty" element={<UnderThirty />} />
         <Route path="reviews" element={<Reviews />} />
