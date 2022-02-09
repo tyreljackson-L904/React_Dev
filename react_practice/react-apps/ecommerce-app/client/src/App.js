@@ -8,8 +8,8 @@ import {
   UnderThirty,
   Reviews,
   ShoppingCart,
+  Checkout
 } from "./components/index";
-import Login from "./components/Login/Login";
 import { commerce } from "./lib/commerce";
 import Products from "./components/products/Products";
 import ProductDetails from "./components/products/ProductDetails";
@@ -72,7 +72,7 @@ function App() {
         <Route path="underthirty" element={<UnderThirty />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="shoppingcart" element={<ShoppingCart cart={cart} handleUpdateCartQty={handleUpdateCartQty} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );

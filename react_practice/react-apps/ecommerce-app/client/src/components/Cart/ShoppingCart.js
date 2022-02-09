@@ -1,9 +1,8 @@
 import React from "react";
 import { useStyles } from "./styles";
-
+import {Link} from "react-router-dom"
 import { Container, Typography, Grid, Button } from "@mui/material";
 import CartItem from "./CartItem";
-import { commerce } from "../../lib/commerce";
 
 const ShoppingCart = ({
   cart,
@@ -55,6 +54,8 @@ const ShoppingCart = ({
             Empty Cart
           </Button>
           <Button
+            component={Link}
+            to="/checkout"
             className={classes.checkoutButton}
             size="large"
             type="button"
