@@ -10,13 +10,13 @@ import {
   Button,
   stepClasses,
 } from "@mui/material";
-import { useStyles } from "./styles";
+// import { useStyles } from "./styles";
 
 const steps = ["Shipping Address", "Payment Details"];
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <>

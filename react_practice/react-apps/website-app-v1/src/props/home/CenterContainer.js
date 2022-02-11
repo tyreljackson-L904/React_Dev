@@ -4,17 +4,6 @@ import Card from "./Card";
 function CenterContainer() {
   return (
     <div className="main-center-container">
-      <div className="sv-header">
-        <h3 className="sv-title">Recent</h3>
-        <h5 className="sv-see-more">See More {">"}</h5>
-      </div>
-      <div className="recent">
-        <Card className="scroll-card" />
-        <Card className="scroll-card" />
-        <Card className="scroll-card" />
-        <Card className="scroll-card" />
-        <Card className="scroll-card" />
-      </div>
       <div className="image-container">
         <div className="header-container">
           <h1 className="header">
@@ -28,6 +17,17 @@ function CenterContainer() {
             <PrimaryButton title="Create Account" className="primary-btn" />
           </div>
         </div>
+      </div>
+      <div className="sv-header">
+        <h3 className="sv-title">Recent</h3>
+        <h5 className="sv-see-more">See More {">"}</h5>
+      </div>
+      <div className="recent">
+        <Card className="scroll-card" />
+        <Card className="scroll-card" />
+        <Card className="scroll-card" />
+        <Card className="scroll-card" />
+        <Card className="scroll-card" />
       </div>
     </div>
   );

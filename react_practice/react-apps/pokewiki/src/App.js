@@ -53,7 +53,7 @@ const App = () => {
             />
           </Route>
           <Route path="/pokemondetail/:pokemonName">
-            <PokemonDetail pokemon={selected} />
+            <PokemonDetail />
           </Route>
         </Switch>
       </div>

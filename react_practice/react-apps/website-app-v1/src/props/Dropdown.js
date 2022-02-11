@@ -4,7 +4,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import DropdownList from "./DropdownList";
 
-function Dropdown(props) {
+const Dropdown = (props) => {
   const [listItem, setListItem] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);

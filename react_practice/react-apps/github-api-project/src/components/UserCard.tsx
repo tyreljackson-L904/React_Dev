@@ -1,16 +1,6 @@
 import React from "react";
 import "../styles/UserCard.css";
-
-type UserType = {
-  html_url: string;
-  avatar_url: string;
-  name: string;
-  login: string;
-  bio: string;
-  followers: string;
-  following: string;
-  public_repos: string;
-};
+import { UserType } from "../types/UserTypes";
 
 type UserProps = {
   user: UserType;
