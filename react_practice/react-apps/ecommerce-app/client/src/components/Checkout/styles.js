@@ -1,4 +1,4 @@
-.checkout-container {
+/* .checkout-container {
   display: flex;
   width: 100%;
   margin-top: 10%;
@@ -6,15 +6,16 @@
 }
 
 .toolbar {
-  /* width: 80%;
-  height: 100vh; */
+  min-height: 56;
 }
 
 .layout {
+  margin-top: 5%;
   width: auto;
-}
+} */
+import {makeStyles} from "@mui/styles"
 
-/* export const useStyles = makeStyles({
+export default makeStyles((theme) => ({
   appBar: {
     position: 'relative',
   },
@@ -63,4 +64,4 @@
     justifyContent: 'center',
     alignItems: 'center',
   },
-}); */
+}));
